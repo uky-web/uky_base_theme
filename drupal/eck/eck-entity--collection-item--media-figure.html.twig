@@ -1,0 +1,7 @@
+{% include 'components-media-with-caption' with {
+  media: content.field_media,
+  heading: eck.field_hide_heading.value? false : plain_title,
+  caption: content.field_description,
+  icon: 'camera',
+  citation: eck.field_media.entity.field_attribution.value
+} %}

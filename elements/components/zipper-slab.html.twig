@@ -1,0 +1,7 @@
+{% embed 'molecules-slab' with { slab_variant : slab_variant|default('slab--wildcat-white')} %}
+    {% block slab_content %}
+        {{ headline }}
+        {{ body }}
+        {% include 'molecules-zipper' with { level: 3, linked: true, carousel_variant : carousel_variant, carousel_layout: carousel_layout } %} 
+    {% endblock %}
+{% endembed %}

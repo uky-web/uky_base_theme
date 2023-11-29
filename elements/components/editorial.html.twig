@@ -1,0 +1,15 @@
+<div class="editorial">
+	{% block editorial_aside %}
+		{% if aside|length %}
+		<aside class="editorial__aside {{ aside_position|default('align-right') }}">
+			{{ aside }}
+		</aside>
+		{% endif %}
+	{% endblock %}
+	{% block editorial_content %}
+	<div class="editorial__content">
+		{{ heading }}
+		{{ body }}
+	</div>
+	{% endblock %}
+</div>

@@ -1,0 +1,51 @@
+{#
+	svg.ref: build an SVG element containing a 'use' reference to an svg element
+				defined on the same page with a symbol. The SVGs should be defined
+				in svg.store() below.
+
+	@params:
+		svgid (string): the ID of the svg on the page without the hashmark.
+		title (string): A title for this specific instance of the element. May be used
+			by screen readers.
+		class (string): A class that is applied to the wrapping SVG.
+#}
+{% macro ref(svgid,title,class) %}
+	<svg title="{{ title }}" class="{{ class }}"><use xlink:href="#{{svgid}}"></use></svg>
+{% endmacro %}
+
+{#
+	svg.ptnimg: define a bitmapped image as a pattern for use in an SVG. Should be called
+		within the SVG element where it will be used.
+
+	@params:
+		path (url): path to the image. Yes, this works with external URLs.
+		width (int): horizontal image dimension
+		height (int): vertical image dimension
+		id (int): an ID for this pattern. Define this or you can't use it, lol.
+#}
+{% macro ptnimg(path,width,height,id) %}
+	<pattern id="{{ id }}" patternUnits="userSpaceOnUse" width="{{ width }}" height="{{ height }}">
+		<image xlink:href="{{ path }}" x="0" y="0" width="{{ width }}" height="{{ height }}"  />
+	</pattern>
+{% endmacro %}
+
+{# match up a social media URL with an icon #}
+{% macro icon_link(U, title) %}
+    {% set url = U.toString() %}
+    {% if 'twitter' in url %}
+    {% set icon = 'twitter-square' %}
+    {% elseif 'facebook' in url %}
+    {% set icon = 'facebook-square' %}
+    {% elseif 'soundcloud' in url %}
+    {% set icon = 'soundcloud' %}
+    {% elseif 'youtube' in url %}
+    {% set icon = 'youtube-square' %}
+    {% elseif 'instagram' in url %}
+    {% set icon = 'instagram' %}
+    {% elseif 'linkedin' in url %}
+    {% set icon = 'linkedin-square' %}
+    {% endif %}
+    <a href="{{ U }}" title="{{ title }}">
+        {% include '@atoms/icon.html.twig' with { icon: icon }%}
+    </a>
+{% endmacro %}

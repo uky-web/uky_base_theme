@@ -1,0 +1,29 @@
+{% set link = eck.field_link[0].url %}
+{% embed 'components-teaser' with {
+  teaser_variant: 'teaser--custom'
+} %}
+  
+  {% block teaser_media %}
+    {% if link %}
+      <a href="{{ link }}">
+    {% endif %}
+    {{ content.field_media }}
+    {% if link %}
+      </a>
+    {% endif %}
+  {% endblock %}
+
+  {% block teaser_content %}
+    {% include 'atoms-headline-group' with {
+      level: 3,
+      head: eck.field_headline_group[0].headline,
+      super: eck.field_headline_group[0].superhead,
+      sub: eck.field_headline_group[0].subhead,
+      linked: link? true : false,
+      url: link,
+    } %}
+
+    {{ content.field_description }}
+
+  {% endblock %}
+{% endembed %}

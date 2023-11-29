@@ -1,0 +1,40 @@
+{% set clamp_variant = (is_main) ? 'clamp--main' %}
+<header id="MainHeader" class="global-header {{ clamp_variant }}">
+{% embed 'molecules-slab' with { slab_variant: 'global-header__masthead'} %}
+    {% block slab_content %}
+        <div class="global-header__banner">
+              {% if theme_settings.logo_option == 'unit_logo' %}
+                {% include 'molecules-logopath' %}
+            {% elseif theme_settings.logo_option == 'uky_logo' %}
+                {% include 'atoms-uky-logo-main' %}
+            {% else %}
+                {% include 'molecules-site-identity' %}
+            {% endif %}
+            {{ page.utility_nav|injectclass('utility-nav') }}
+            {% set toggle_config = {
+                toggle: '#MobileNav',
+                toggle_viz: true,
+                toggle_toggled_label : 'Close',
+                toggle_toggled_icon : 'close'
+            } %}
+            {% include 'molecules-toggle-button' with { 
+                icon_label_variant:'icon-label--stacked', 
+                toggle_button_variant: "menu-button", 
+                label: 'Menu', 
+                icon: 'menu', 
+                data_obj : toggle_config 
+            } %}
+        </div>
+    {% endblock %}
+{% endembed %}
+{% embed 'molecules-slab' with { slab_variant: 'global-header__nav-bar' } %}
+    {% block slab_content %}
+        {{ page.top_nav|injectclass('global-nav') }}
+    {% endblock %}
+{% endembed %}
+{% embed 'molecules-slab' with { slab_variant: 'mobile-nav', props: ['hidden'], attrs: { id : 'MobileNav' } } %}
+    {% block slab_content %}
+        {% include 'molecules-mobile-tab-nav' %}
+    {% endblock %}
+{% endembed %}
+</header>

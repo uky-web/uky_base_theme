@@ -1,0 +1,23 @@
+{% if content_date or content_location or content_taxonomy or content_byline %}
+<div class="content-meta">
+    <div class="content-meta__who-when">
+        {% if content_byline %}
+            <span class="byline">{{ content_byline }}</span>
+        {% endif %}
+        {% if content_date %}
+            {% apply spaceless %}
+            <span class="date">
+                {{ ranger(content_date|tz_adjust, content_date_end|default('')|tz_adjust, 'medium', all_day? 'none':'short') }}
+            </span>
+            {% endapply %}
+        {% endif %}
+        {% if content_location %}
+            {{ attach_library('ukd8/modals') }}
+            <div class="location">{{ content_location.title }}{% if content_location.address or content_location.url %}{% if content_location.address %}: <a class="modal-control mfp-iframe" href="https://maps.google.com/maps?q={{ content_location.address|url_encode }}">Map</a>{% endif %}{% if content_location.url %} - <a href="{{ content_location.url }}">Details</a>{% endif %}{% endif %}</div>
+        {% endif %}
+    </div>
+    {% if content_taxonomy %}
+        <span class="taxonomy-list">{% for w in content_taxonomy %}{{ w }}{% if not loop.last %}, {% endif %}{% endfor %}</span> 
+    {% endif %}        
+</div>
+{% endif %}

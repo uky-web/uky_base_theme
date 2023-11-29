@@ -1,0 +1,12 @@
+<div class="slab {{ slab_variant|default('slab--wildcat-white') }}">
+    <div class="grid grid--major-left">
+        <div class="grid__column grid__column--major">
+            {% block slab_content %}
+            {% endblock %}
+        </div>                        
+        <div class="grid__column grid__column--minor">
+            {% block slab_sidebar %}
+            {% endblock %}
+        </div>
+    </div>
+</div>

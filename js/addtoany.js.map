@@ -1,0 +1,1 @@
+{"version":3,"sources":["addtoany.js"],"names":["window","a2a_config","onclick"],"mappings":";;AAAAA,OAAOC,UAAP,GAAoB,EAApB;AACAD,OAAOC,UAAP,CAAkBC,OAAlB,GAA4B,CAA5B","file":"addtoany.js","sourcesContent":["window.a2a_config = {};\nwindow.a2a_config.onclick = 1;"]}

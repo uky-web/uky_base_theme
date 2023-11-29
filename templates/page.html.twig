@@ -1,0 +1,41 @@
+{{ page.alert }}
+{% include 'components-universal-header' %}
+{% include 'components-global-header' %}
+<main class="main" id="main-content">
+	{% block main %}
+		{% block content_prefix %}
+			{{ page.content_prefix }}
+		{% endblock %}
+
+		{% block breadcrumb %}
+			{{ page.breadcrumb }}
+		{% endblock %}
+
+		{% block main_content %}
+			{% set main_content %}
+				{{ page.content|children }}
+			{% endset %}
+			{% set sidebar %}
+				{{ page.sidebar|children }}
+			{% endset %}
+			{% if main_content|trim %}
+				{% if sidebar|trim %}
+					{% include 'molecules-slab-1x2' with {
+						main: main_content,
+						aside: sidebar
+					} %}
+				{% else %}
+					{% block content_column %}
+						{{ page.content }}
+					{% endblock %}
+				{% endif %}
+			{% endif %}
+		{% endblock %}
+
+		{% block content_suffix %}
+			{{ page.content_suffix }}
+		{% endblock %}
+	{% endblock %}
+</main>
+{% include 'components-global-footer' %}
+{% include 'components-universal-footer' %}

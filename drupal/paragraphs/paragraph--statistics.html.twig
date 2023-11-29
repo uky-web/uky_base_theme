@@ -1,0 +1,13 @@
+{% set n = min(6, paragraph.field_collection_items|length) %}
+{% if editorial_column %}
+  {% set n = min(2, n) %}
+{% endif %}
+{% set schema = paragraph.field_theme_color_scheme|length?  paragraph.field_theme_color_scheme.value : theme_settings.scheme_settings.pargraph__statistics.value %}
+{% set divided = (paragraph.field_theme_show_divisions|length and paragraph.field_theme_show_divisions.value)? paragraph.field_theme_show_divisions.value : theme_settings.layout_boolean_settings.paragraph__statistics__divide.value %}
+{% include 'molecules-grid' with { 
+  head : content.field_headline_group,
+  grid_type: "grid--" ~ n ~ "-up",
+  grid_columns: content.field_collection_items|children,
+  slab_variant: 'slab--wildcat-white',
+  grid_style: (divided? 'grid--divided ') ~ ((schema == 'wildcat')? 'grid--two-tone'),
+} %}

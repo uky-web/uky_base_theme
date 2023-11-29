@@ -1,0 +1,6 @@
+{
+    "name": "ukd8-base-theme",
+    "dependencies": {
+        "patternlab": "git+https://gitlab+deploy-token-63884:osN_MXCsbL3wsyjdaWqE@gitlab.com/uky-web/university-web-platform/web-design-system/patternlab-artifact.git#v1.2.4"
+    }
+}

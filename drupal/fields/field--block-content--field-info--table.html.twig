@@ -1,0 +1,12 @@
+<table class="contact-table">
+  <caption class="show-for-sr">Important Information</caption>
+  <tbody>
+{% for item in items %}
+  {% set row = item.content['#collection_item'] %}
+    <tr>
+      <th scope="row">{{ row.title.value }}</th>
+      <td>{{ row.field_description.value|raw }}</td>
+    </tr>
+{% endfor %}
+  </tbody>
+</table>

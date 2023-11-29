@@ -1,0 +1,9 @@
+<div class="slab {{ slab_variant|default('slab--wildcat-white') }}" {{ props|join(' ') }} {{ attrs|attr_list }}>
+    {% block slab_outer %}
+        <div class="slab__wrapper">
+            {% block slab_content %}
+                {% include 'atoms-placeholder' %}
+            {% endblock %}
+        </div>
+    {% endblock %}
+</div>

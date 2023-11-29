@@ -1,0 +1,6 @@
+{% if eck.field_link.uri %}
+<a href="{{ eck.field_link[0].url }}">{{ plain_title }}</a>
+{% else %}
+{{ plain_title }}
+{% endif %}
+{{ content.field_address }}

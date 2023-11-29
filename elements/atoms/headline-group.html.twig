@@ -1,0 +1,13 @@
+{% if level > 0 and level <= 6 %}
+	{% set tag = 'h' ~ level %}
+{% else %}
+	{% set tag = 'div' %}
+{% endif %}
+<{{tag}}{% if headline_group_id %} id="{{ headline_group_id }}"{% endif %} class="headline-group {{ headline_group_variant }}">
+	{% block headline_group %}
+    {% if super %}<span class="headline-group__super">{{ super }}</span>{% endif %}
+    {% if head %}<span class="headline-group__head">{% if linked %}<a href="{{ url }}" class="underline-link">{{ head }}</a>{% else %}{{ head }}{% endif %}</span>{% endif %}	
+		{% if sub %}<span class="headline-group__sub">{{ sub }}</span>{% endif %}
+	{% endblock %}
+</{{tag}}>
+

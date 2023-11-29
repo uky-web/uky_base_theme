@@ -1,0 +1,10 @@
+{% for item in items %}
+{% embed 'atoms-link' with {
+  url: item.content['#url'],
+  link_variant: 'button'
+} %}
+  {% block link_content %}
+    {{ item.content['#title'] }}
+  {% endblock %}
+{% endembed %}
+{% endfor %}

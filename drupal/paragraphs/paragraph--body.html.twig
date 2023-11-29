@@ -1,0 +1,13 @@
+{% if editorial_column %}
+  <div class="editorial">
+    {{ content }}
+  </div>
+{% else %}
+  {% embed 'molecules-slab' %}
+    {% block slab_content %}
+      <div class="editorial">
+        {{ content }}
+      </div>
+    {% endblock %}
+  {% endembed %}
+{% endif %}

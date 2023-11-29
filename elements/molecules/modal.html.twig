@@ -1,0 +1,20 @@
+{#
+    content_type is one of image|iframe|inline|ajax
+ #}
+{% set mfp_type = "mfp-" ~ content_type|default('inline') %}
+
+{# include an inline modal wrapper for inline modals only #}
+{% if mfp_type is same as("mfp-inline") %}
+    {# for inline modals, the src value is the fragment identifier #}
+    {% set id = "modal_popup_"|uniqid %}
+    {% set src = "#" ~ id %}
+    {# An inline #}
+    <div class="modal-display mfp-hide" id="{{ id }}">
+        {% block modal_content %}
+            {% include 'components-micro-teaser' %}
+        {% endblock %}
+    </div>
+{% endif %}
+
+<button class="modal-control {{ mfp_type }} {{ modal_variant }}" data-mfp-src="{{ src }}">{{ modal_trigger_text|default("Open Modal") }}</button>
+

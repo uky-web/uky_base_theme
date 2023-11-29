@@ -1,0 +1,4 @@
+{% for item in items %}{% include 'atoms-link-fancy' with {
+  title: item.content['#title'],
+  url: item.content['#url'],
+} %}{% endfor %}

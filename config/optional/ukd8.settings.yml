@@ -1,0 +1,56 @@
+# site meta
+is_main: false
+lockup_wordmark_1: 'Your department'
+lockup_wordmark_2: 'name'
+uky_home_url: 'https://www.uky.edu/'
+college_url: ''
+college_title: ''
+show_college_under_lockup: false
+
+# all the options available
+scheme_options:
+  light: 'Light blue'
+  dark: 'Dark blue'
+  wildcat: 'Wildcat'
+  white: 'White'
+  gray: 'Gray'
+
+# color scheme defaults
+scheme_settings:
+  page_header__full_width: 
+    name: 'Full width hero page header'
+    value: white
+    disallowed: ['light', 'gray']
+  page_header__split_header: 
+    name: 'Split hero page header'
+    value: light
+    disallowed: ['white']
+  page_header__text_only: 
+    name: 'Text-only page header'
+    value: white
+    disallowed: ['light']
+  collection_item__call_to_action: 
+    name: 'Call to Action block'
+    value: white
+    disallowed: ['gray', 'wildcat']
+  collection_item__pullquote: 
+    name: 'Pullquote'
+    value: white
+    disallowed: ['gray']
+  paragraph__statistics: 
+    name: 'Statistic block'
+    value: white
+    disallowed: ['light', 'gray', 'dark']
+  paragraph__carousel: 
+    name: 'Carousel slab'
+    value: white
+    disallowed: ['light']
+
+# other setttings
+layout_boolean_settings:
+  paragraph__statistics__divide:
+    name: 'Divide statistic collections'
+    value: false
+  paragraph__carousel__center:
+    name: 'Use centered carousel style'
+    value: false

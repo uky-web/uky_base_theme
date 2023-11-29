@@ -1,0 +1,14 @@
+<div class="social-media-links {{ social_media_links_variant }}">
+    {% block headline %}
+        {{ head }}
+    {% endblock %}
+    <div class="social-media-links__linkset">
+        {% apply spaceless %}
+            {% for link in links %}
+                {% set icon = link.uri|matchsocial %}
+                {% if social_icons_block %}{% set icon = icon ~ '-block' %}{% endif %}
+                <a href="{{ link.uri }}">{% include 'atoms-icon-label' with { hide_label: true, icon: icon, label: link.title } %}</a>
+            {% endfor %}
+        {% endapply %}
+    </div>
+</div>

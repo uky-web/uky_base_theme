@@ -1,0 +1,57 @@
+{# If there's no section, we can spit out the same panel component but with only one tab #}
+{% set show_section_tab = not is_home %}
+{% set tabs_variant = [
+        'mobile-tab-nav',
+        (is_main) ? 'mobile-tab-nav--wildcat' : ''
+    ] %}
+
+{% set show_section_tab = page.mobile_tab_section |render|striptags|trim is not empty %}
+
+{% embed 'molecules-tabs' with { tabs_variant: tabs_variant|join(' ') } %}
+    {% block tabs_tabs %}
+        {% if show_section_tab %}
+            {% include 'molecules-tab-tab' with { tab_target : "mobile_section", tab_label : "In This Section" } %}
+        {% endif %}
+        {% include 'molecules-tab-tab' with { tab_target : "mobile_mainmenu", tab_label : "Main Menu / Search" } %}
+    {% endblock %}
+    {% block tabs_panels %}
+        {% embed 'molecules-tab-panel' with { tab_panel_variant: 'mobile-tab-nav__main-menu-panel', tab_panel_id : "mobile_mainmenu" } %}
+
+            {% block tab_panel_content %}
+                <div class="mobile-tab-nav__menus">
+                    {{ page.mobile_tab_mainmenu }}
+                <hr/>
+                     {{ page.mobile_tab_utility_nav|injectclass('mobile-tab-utility-nav') }}
+                </div>
+                <div class="mobile-tab-nav__universal">
+                    {# {% if not is_main %}
+                        {% include 'molecules-universal-breadcrumb' %}
+                    {% else %}
+                        <hr>
+                    {% endif %} #}
+                    {% include 'molecules-universal-nav' with { extra_links: ['#UKY4Y','Resources'] } %}
+                </div>
+            {% endblock %}
+
+        {% endembed %}
+        {% if show_section_tab %}
+            {% embed 'molecules-tab-panel' with { tab_panel_id : "mobile_section" } %}
+                {% block tab_panel_content %}
+                  <div class="mobile-tab-nav__menus">
+                    {{ page.mobile_tab_section }}
+                  </div>
+                  <hr/>
+                  {{ page.mobile_utility_nav|injectclass('mobile_utility-nav') }}
+                {% endblock %}
+            {% endembed %}
+        {% endif %}
+
+
+    {% endblock %}
+{% endembed %}
+
+ {# {% embed 'molecules-tab-panel' with { tab_panel_id : "mobile_section" } %}
+            {% block tab_panel_content %}
+                {{ page.mobile_tab_section }}
+            {% endblock %}
+        {% endembed %} #}

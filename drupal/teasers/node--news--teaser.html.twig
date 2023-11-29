@@ -1,0 +1,9 @@
+{% set byline = '' %}
+{% if content.field_byline|children|length %}
+  {% set byline = node.field_byline.value %}
+{% endif %}
+{% include 'components-content-teaser' with {
+  content_byline: byline,
+  content_date: node.getCreatedTime(),
+  all_day: true,
+} %}

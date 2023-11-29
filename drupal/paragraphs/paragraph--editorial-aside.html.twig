@@ -1,0 +1,17 @@
+{% set content %}
+  {% include 'components-editorial' with {
+    heading: content.field_headline_group,
+    body: content.field_main|children,
+    aside: content.field_aside|children,
+    aside_position: paragraph.field_flip.value? 'align-left' : 'align-right',
+  } %}
+{% endset %}
+{% if editorial_column %}
+  {{ content }}
+{% else %}
+  {% embed 'molecules-slab' %}
+    {% block slab_content %}
+      {{ content }}
+    {% endblock %}
+  {% endembed %}
+{% endif %}

@@ -1,0 +1,15 @@
+<div class="link-collection">
+    <div class="link-collection__header">
+        {{ headline }}
+        <div class="editorial">
+            {{ body }}
+        </div>
+    </div>
+    <div class="link-collection__content">
+        {% include 'molecules-described-links' with {
+            links: links,
+            brief: false
+        } %}
+        {{ button }}
+    </div>
+</div>

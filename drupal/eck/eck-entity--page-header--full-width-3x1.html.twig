@@ -1,0 +1,11 @@
+{% set schema = eck.field_theme_color_scheme|length? eck.field_theme_color_scheme.value : theme_settings.scheme_settings.page_header__full_width.value %}
+{% set small_image = eck.field_secondary_media.entity.field_media_image %}
+{% include 'components-hero-page-header' with {
+  headline: content.field_headline_group,
+  media: content.field_media,
+  secondary_image_url: small_image.entity.uri.value|resize('square'),
+  secondary_image_alt: small_image.alt,
+  cta_primary: content.field_cta_link,
+  cta_secondary: content.field_secondary_link,
+  slab_variant: {'white': 'slab--wildcat-white', 'dark': 'slab--dark-blue', 'wildcat': 'slab--wildcat-blue'}[schema]  
+} %}

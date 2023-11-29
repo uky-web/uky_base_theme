@@ -1,0 +1,32 @@
+{#
+/**
+ * @file
+ * Theme override to display an emergency_alert.
+ *
+ * Available variables:
+ * - title
+ * - message
+ * - alert_level
+ *
+ */
+#}
+{% set icon = false %}
+{% set banner_class = false %}
+{% if alert_level == 'danger' %}
+  {% set icon = "alert" %}
+  {% set banner_class = "emergency" %}
+{% endif %}
+{# TODO: icon for warning? announcement? #}
+{%
+  set classes = [
+    'banner-alert',
+    banner_class? 'banner-alert--' ~ banner_class,
+  ]
+%}
+<div{{ attributes.addClass(classes) }}>
+  {% if title %}
+    {% include 'atoms-icon-label' with { icon_label_variant: "icon-label--big", icon: icon, label: title } %}
+  {% endif %}
+  
+  {{ message }}
+</div>

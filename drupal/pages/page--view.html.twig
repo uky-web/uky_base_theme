@@ -1,0 +1,12 @@
+{% extends 'page.html.twig' %}
+  
+{% block content_prefix %}
+  {% embed 'molecules-slab' with {slab_variant : 'slab--wildcat-white page-header page-header--text'} %}
+    {% block slab_content %}
+       {% include 'atoms-headline-group' with {
+         head: page['#title'],
+         level: 1,
+       } %}
+    {% endblock %}
+  {% endembed %}
+{% endblock %}

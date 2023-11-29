@@ -1,0 +1,1 @@
+<h{{ level|default(1) }}{% if heading_variant is not empty %} class="{{ heading_variant }}"{% endif %}>{% if linked is same as(true) %}{% include 'atoms-link' with { label: headline } %}{% else %}<span class="heading__text">{{ headline }}{% endif %}</span></h{{ level|default(1) }}>

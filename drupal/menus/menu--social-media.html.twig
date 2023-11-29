@@ -1,0 +1,17 @@
+{% set links = [] %}
+{% for item in items %}
+  {% set links = links|merge([{
+    title: item.title,
+    uri: item.url.toString(),
+  }]) %}
+{% endfor %}
+{% embed 'components-social-media-links' with { 
+  social_media_links_variant : "social-media-links--row",
+  links: links,
+} %}
+{% block headline %}
+  <h2 class="headline-group show-for-sr">
+	<span class="headline-group__head">Follow us on social media</span>
+  </h2>
+{% endblock %}
+{% endembed %}

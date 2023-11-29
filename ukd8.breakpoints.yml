@@ -1,0 +1,18 @@
+ukd8.small:
+  label: small
+  mediaQuery: 'all and (max-width: 560px)'
+  weight: 1
+  multipliers:
+    - 1x
+ukd8.medium:
+  label: medium
+  mediaQuery: 'all and (min-width: 561px) and (max-width: 850px)'
+  weight: 1
+  multipliers:
+    - 1x
+ukd8.large:
+  label: large
+  mediaQuery: 'all and (min-width: 851px)'
+  weight: 1
+  multipliers:
+    - 1x

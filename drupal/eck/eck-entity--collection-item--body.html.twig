@@ -1,0 +1,4 @@
+{% set without = eck.field_hide_heading.value? 'title': '' %}
+<div class="editorial">
+  {{ content|without(without) }}
+</div>

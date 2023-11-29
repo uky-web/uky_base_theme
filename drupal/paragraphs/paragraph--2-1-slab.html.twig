@@ -1,0 +1,6 @@
+{% include 'molecules-slab-1x2' with {
+  headline: content.field_headline_group,
+  main: content.field_main|children,
+  aside: content.field_aside|children,
+  reverse_order: paragraph.field_flip.value,
+} %}

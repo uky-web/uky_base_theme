@@ -1,0 +1,1 @@
+{"version":3,"sources":["accordion.js"],"names":["accordion","$"],"mappings":";;AAAA,IAAMA,YAAY,SAAZA,SAAY,GAAM;AACtBC,IAAE,eAAF,EAAmBD,SAAnB;AACD,CAFD","file":"accordion.js","sourcesContent":["const accordion = () => {\n  $('.js-accordion').accordion();\n};\n"]}

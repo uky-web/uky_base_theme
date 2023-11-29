@@ -1,0 +1,12 @@
+<div class="image-gallery">
+    <!-- image-gallery__block-sizer empty element, used by masonry image layout -->
+    <div class="image-gallery__block-sizer"></div>
+    {% for figure in figures %}
+        {% set bigImageSrc = figure['#collection_item'].field_media.entity.field_media_image.entity.uri.value|resize('max_650x650') %}
+        <div class="image-gallery__block {{ class_modifier }}">
+            <a class="image-gallery__popup-launcher" href="{{ bigImageSrc }}"><!-- should open modal eventually -->
+            {{ figure }}
+            </a>
+        </div>
+    {% endfor %}
+</div>

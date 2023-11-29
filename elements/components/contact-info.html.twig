@@ -1,0 +1,32 @@
+<div class="teaser teaser--blue-gray contact-info {{ contact_info_variant }}">
+    {% if contact_info_variant is not same as("contact-info--sheet") %}
+        <div class="contact-info__heading">
+            {{ headline }}
+        </div>
+    {% endif %}
+    <div class="contact-info__content">
+        {% if not hide_image %}
+            <div class="contact-info__photo">
+            {{ photo }}
+            </div>
+        {% endif %}
+        {% if contact_info_variant is not same as("contact-info--sheet") %}
+            <div class="contact-info__identity">
+                <p>
+                    <span class="contact-info__name">{{ name }}</span>
+                    <span class="contact-info__title">{{ job_title }}</span>
+                </p>
+            </div>
+        {% endif %}
+        <dl class="invisible-labels">
+          {% for item in info %}
+            {% if item|children|length %}
+                <dt>{{ item['#title'] }}</dt>
+                {% for link in item|children %}
+                <dd>{{ link|injectclass('link--fancy') }}</dd>
+                {% endfor %}
+            {% endif %}
+          {% endfor %}
+        </dl>
+    </div>
+</div>

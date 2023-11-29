@@ -1,0 +1,99 @@
+global:
+  version: VERSION
+  css:
+    base:
+      helpers/drupal.css: {}
+      css/style.css: {}
+  js:
+    helpers/jquery.js: {}
+    js/activate-current-links.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - ukd8/toggle
+    - ukd8/tabs
+    - ukd8/patternlab
+patternlab:
+  version: VERSION
+  css:
+    base:
+      node_modules/patternlab/css/style.css: {}
+imagesloaded:
+  version: VERSION
+  js:
+    js/lib/imagesloaded.pkgd.min.js: {}
+masonry:
+  version: VERSION
+  js:
+    js/lib/masonry.pkgd.min.js: {}
+magnific:
+  version: VERSION
+  js:
+    js/lib/jquery.magnific-popup.min.js: {}
+  dependencies:
+    - core/jquery
+accessible-accordion:
+  version: VERSION
+  js:
+    js/lib/jquery-accessible-accordion.js: {}
+  dependencies:
+    - core/jquery
+slick:
+  version: VERSION
+  js:
+    js/lib/slick/slick.js: {}
+addtoany:
+  version: VERSION
+  js:
+    js/addtoany.js: {}
+    'https://static.addtoany.com/menu/page.js':
+      type: external
+      minified: true
+      async: async
+image-gallery:
+  version: VERSION
+  js:
+    js/image-gallery.js: {}
+    helpers/image-gallery.js: {}
+  dependencies:
+    - core/jquery
+    - ukd8/imagesloaded
+    - ukd8/magnific
+    - ukd8/masonry
+zipper:
+  version: VERSION
+  js:
+    js/accordion.js: {}
+    helpers/accordion.js: {}
+  dependencies:
+    - core/jquery
+    - ukd8/accessible-accordion
+carousel:
+  version: VERSION
+  js:
+    js/carousel.js: {}
+    helpers/carousel.js: {}
+  dependencies:
+    - core/jquery
+    - ukd8/slick
+modals:
+  version: VERSION
+  js:
+    js/modals.js: {}
+    helpers/modals.js: {}
+  dependencies:
+    - ukd8/magnific
+    - core/jquery
+toggle:
+  version: VERSION
+  js:
+    js/toggle-button.js: {}
+    helpers/toggle.js: {}
+tabs:
+  version: VERSION
+  js:
+    js/lib/jquery-accessible-tabs-aria.js: {}
+accordion:
+  version: VERSION
+  js:
+    js/lib/jquery-accessible-accordion.js: {}

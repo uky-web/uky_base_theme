@@ -1,0 +1,8 @@
+<dl class="described-links">
+  {% for link in links %}
+    <dt>{% include 'atoms-link-fancy' with { title: link['#title'], url: link['#url'] } %}</dt>
+    {% if not brief %}
+    <dd>{{ link['#description'] }}</dd>
+    {% endif %}
+  {% endfor %}
+</dl>

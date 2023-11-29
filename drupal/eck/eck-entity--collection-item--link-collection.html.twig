@@ -1,0 +1,5 @@
+{% include 'molecules-link-collection' with {
+  headline: content.title,
+  body: content.field_description,
+  links: content.field_described_links|children,
+} %}

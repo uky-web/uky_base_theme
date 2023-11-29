@@ -1,0 +1,12 @@
+{% include 'components-contact-info' with {
+  headline: content.title,
+  name: content.field_name_text|children,
+  job_title: content.field_job_title|children,
+  photo: content.field_media,
+  info: [
+    content.field_linked_location,
+    content.field_location_detail,
+    content.field_email,
+    content.field_phone,
+  ]
+} %}

@@ -1,0 +1,12 @@
+<div class="micro-teaser">
+    {% include 'molecules-headline-group' with { head: 'Microteaser heading' } %}
+    <div class="micro-teaser__wrapper">
+    <div class="micro-teaser__media">
+        {% include 'atoms-image' with {aspect: "1:1", width: 300} %}
+    </div>
+    <div class="micro-teaser__content">
+        {% include 'atoms-formatted-text' %}
+        {% include 'molecules-cta-group' with { cta_type: "mixed" } %}
+    </div>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+{% set footernavid = 'universal-links'|uniqid %}
+{% embed 'molecules-slab' with { slab_variant: 'slab--wildcat-blue universal-footer' } %}
+    {% block slab_content %}
+        {% if not is_main %}
+            <a href="https://www.uky.edu">{% include 'atoms-uk-wordmark' %}</a>
+        {% endif %}
+        <div class="universal-footer__ribbon">
+            <div><a href="https://www.uky.edu/equal-opportunity-university/" class="underline-link">An Equal Opportunity University</a></div>
+            <div><a href="https://www.uky.edu/accreditation/" class="underline-link">Accreditation</a></div>
+            <div><a href="https://directory.uky.edu/" class="underline-link">Directory</a></div>
+            <div><a href="mailto:ukpr@uky.edu" class="underline-link">Email</a></div>
+            <div><a href="https://www.uky.edu/privacy" class="underline-link">Privacy Policy</a></div>
+            <div><a href="https://www.uky.edu/web-accessibility" class="underline-link">Accessibility</a></div>
+            <div><a href="https://www.uky.edu/disclosures" class="underline-link">Disclosures</a></div>
+        </div>
+        <div class="universal-footer__ribbon">
+            <div>© University of Kentucky</div>
+            <div><a href="https://www.uky.edu/directions">{% include 'atoms-icon-label' with { icon: 'pin', 'label': 'Lexington, Kentucky 40506' } %}</a></div>
+        </div>
+    {% endblock %}
+{% endembed %}

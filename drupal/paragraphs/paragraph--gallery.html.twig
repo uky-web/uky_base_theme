@@ -1,0 +1,10 @@
+{{ attach_library('ukd8/image-gallery') }}
+{% embed 'molecules-slab' with { slab_variant : 'slab--wildcat-white' } %}
+  {% block slab_content %}
+    {% include 'components-image-gallery' with {
+      figures: content.field_collection_items|children,
+      body: content.field_body,
+      headline: content.field_headline_group,
+    } %}
+  {% endblock %}
+{% endembed %}

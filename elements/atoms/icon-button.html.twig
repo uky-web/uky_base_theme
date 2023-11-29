@@ -1,0 +1,5 @@
+{% embed 'atoms-button' with { button_variant: 'button--icon ' ~ button_variant } %}
+    {% block button_content %}
+        {% include 'atoms-icon-label' with { icon_label_variant: icon_label_variant, icon: icon|default('home'), label: label|default('Home') } %}
+    {% endblock %}
+{% endembed %}

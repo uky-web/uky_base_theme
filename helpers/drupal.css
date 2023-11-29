@@ -1,0 +1,155 @@
+html.paragraphs-previewer-popup-html .slab {
+  background-color: white;
+}
+
+/* Commenting out because it breaks the administration menu child menus
+#toolbar-administration ul {
+  margin: 0;
+}
+*/
+
+.content-meta .field {
+  display: inline;
+}
+
+.contextual-links[hidden] {
+  display: none !important;
+}
+
+.pullquote__meta .contextual-region {
+  position: static;
+}
+
+/* clean up space between prefix and first slab */
+.region-content-prefix + .slab {
+  padding-top: 0;
+}
+.node--type-news .node__content .slab:first-child {
+  padding-top: 0;
+}
+
+/* menu styling overrides */
+ul.menu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  }
+  ul.menu li {
+    display: inline-block
+  }
+  .link-group > ul.menu {
+    display: block;
+  }
+
+.universal-nav .menu-item {
+  margin: 0;
+}
+
+.global-footer ul.menu li {
+  display: block;
+}
+
+/* enforce embedded media widths */
+.editorial .editorial__aside.align-right,
+.editorial .editorial__aside.align-left
+{
+  width: 50%;
+}
+
+.editorial .embedded-entity.align-left {
+  margin-right: 2rem;
+  margin-left: -2vw;
+}
+.editorial .embedded-entity.align-right {
+  margin-left: 2rem;
+}
+
+.embedded-entity img {
+  max-width: 100%;
+  width: auto;
+}
+
+.global-nav .menu li {
+  margin-bottom: 0;
+  line-height: inherit;
+}
+
+/* medium breakpoint */
+@media screen and (min-width: 35rem) {
+}
+
+/* large breakpoint */
+@media screen and (min-width: 58rem) {
+  /* enforce embedded media widths */
+  .editorial .editorial__aside.align-right,
+  .editorial .editorial__aside.align-left
+  {
+    width: 40%;
+  }
+}
+
+/* xl breakpoint */
+@media screen and (min-width: 76rem) {
+}
+
+
+/* This adds styling to the field labels for inline and above. */
+
+.field--label-above > .field__label {
+    font-weight: bold;
+    margin: 0 10px 10px 0;
+}
+
+.field--label-inline > .field__label {
+    font-weight: bold;
+    margin: 0 10px 10px 0;
+    float: left;
+}
+
+.field--label-inline > .field__item, .field--label-above > .field__item {
+	margin: 0 0 10px 0;
+}
+
+/* Setting list styles for nested <ol> */
+
+ol {
+	list-style: decimal;
+}
+
+ol ol {
+	list-style: lower-alpha;
+}
+
+ol ol ol {
+	list-style: lower-roman;
+}
+
+ol ol ol ol {
+	list-style: decimal;
+}
+
+/* Changing a link color in table header from black to white so it is visible */
+
+th a:link, th a:visited {
+	color: #ffffff !important;
+}
+
+/* Simple override for the button a:visited being black issue */
+.editorial a.button,
+.editorial button {
+  background-image: none;
+  color: #FFF; }
+
+/* Adding styling for people content reference in a grid */
+.field--name-field-media-image {
+    margin-bottom: 1rem;
+  }
+  
+.people-list--name {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-family: "bodoni-pt-variable", serif;
+    font-weight: 600;
+  }
+

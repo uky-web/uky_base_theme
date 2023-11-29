@@ -1,0 +1,30 @@
+{% set wordmark_1_classes %}
+    {% if theme_settings.lockup_wordmark_1_subhead %}
+    site-identity__wordmark__row--subhead 
+    {% endif %}
+    {% if theme_settings.lockup_wordmark_1_no_mobile %}
+    no-mobile
+    {% endif %}
+{% endset %}
+
+{% set wordmark_2_classes %}
+    {% if theme_settings.lockup_wordmark_2_subhead %}
+    site-identity__wordmark__row--subhead 
+    {% endif %}
+    {% if theme_settings.lockup_wordmark_2_no_mobile %}
+    no-mobile
+    {% endif %}
+{% endset %}
+
+<a href="{{ path('<front>') }}" class="site-identity">
+    <div class="site-identity__main">
+        <div class="site-identity__logo">
+            {% include 'atoms-uk-logo' %}
+        </div>
+        <div class="site-identity__wordmark">
+            <span class="site-identity__wordmark__row {{wordmark_1_classes}}">{{ theme_settings.lockup_wordmark_1 }}</span>
+            <span class="site-identity__wordmark__row {{wordmark_2_classes}}">{{ theme_settings.lockup_wordmark_2 }}</span>
+        </div>
+    </div>
+</a>	
+

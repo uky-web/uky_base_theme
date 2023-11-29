@@ -1,0 +1,18 @@
+{# This molecule was deprecated 04/2023 with switch to new molecule/site-identity to comply with University font subscriptions #}
+
+{# <a href="{{ path('<front>') }}" class="lockup">
+	<div class="lockup__main">
+		<div class="lockup__logo">
+			{% include 'atoms-uk-logo' %}
+		</div>
+		<div class="lockup__wordmark">
+			<span class="lockup__wordmark__row">{{ theme_settings.lockup_wordmark_1 }}</span>
+			<span class="lockup__wordmark__row">{{ theme_settings.lockup_wordmark_2 }}</span>
+		</div>
+	</div>
+	{% if theme_settings.show_college_under_lockup %}
+	<div class="lockup__unit">{{ theme_settings.college_title }}</div>
+	{% endif %}
+</a>  #}
+
+{% include 'molecules-site-identity' %}

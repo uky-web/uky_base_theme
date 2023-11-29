@@ -1,0 +1,58 @@
+{% extends 'node--full.html.twig' %}
+
+{% block prefix %}
+  {% set header_style = node.field_header_style.entity.type %}
+  {% if header_style == 'split_header' %}
+    {% include 'components-split-page-header' with {
+      headline: content.field_headline_group,
+      media: content.field_media
+    } %}
+  {% elseif header_style == 'full_width' %}
+    {% include 'components-hero-page-header' with {
+      headline: content.field_headline_group,
+      media: content.field_media
+    } %}
+  {% else %}
+    {% include 'components-text-page-header' with {
+      headline: content.field_headline_group
+    } %}
+  {% endif %}
+
+  {{ region.breadcrumb }}
+
+  {% set location = false %}
+  {% if node.field_location|length %}
+    {% set location = {
+      title: node.field_location.entity.title.value,
+      url: node.field_location.entity.field_link[0].url.toString(),
+      address: node.field_location.entity.field_address.value,
+    } %}
+  {% endif %}
+
+  {% embed 'molecules-slab' %}
+    {% block slab_content %}
+      {% include 'molecules-content-meta' with {
+        content_location: location,
+        content_date: node.field_dates.value,
+        content_date_end: node.field_dates.end_value,
+        all_day: node.field_all_day.value,
+        content_taxonomy: content.field_categories|children,
+      } %}
+    {% endblock %}
+  {% endembed %}
+{% endblock %}
+
+{% block content %}
+  {% embed 'molecules-slab-2x1' %}
+      {% block slab_content %}
+        {{ content.body }}
+        {{ content.field_paragraphs }}
+      {% endblock %}
+      {% block slab_sidebar %}
+        {{ region.sidebar }}
+      {% endblock %}
+  {% endembed %}
+{% endblock %}
+
+{% block suffix %}
+{% endblock %}

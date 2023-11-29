@@ -1,0 +1,12 @@
+{{ attach_library('ukd8/modals') }}
+{% set uniqid = "UniversalNavLabel"|uniqid %}
+<div class="universal-nav" aria-labelledby="{{ uniqid }}">
+    <div class="show-for-sr" id="{{ uniqid }}">University-wide Navigation</div>
+    {{ page.universal_nav }}
+    {% include 'atoms-my-uk-logo' %}
+    {% embed 'molecules-modal' with { content_type: "inline", modal_trigger_text: "Search", modal_variant: "search-control" } %}
+        {% block modal_content %}
+            {% include 'components-search-form' %}
+        {% endblock %}
+    {% endembed %}
+</div>

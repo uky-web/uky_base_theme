@@ -1,0 +1,9 @@
+{% extends 'page.html.twig' %}
+  
+{% block content_column %}
+  {% embed 'molecules-slab' %}
+    {% block slab_content %}
+      {{ page.content }}
+    {% endblock %}
+  {% endembed %}
+{% endblock %}

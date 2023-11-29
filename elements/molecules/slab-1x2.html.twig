@@ -1,0 +1,26 @@
+{% if reverse_order %}
+    {% set gridlayout = 'grid--major-right' %}
+{% else %}
+    {% set gridlayout = 'grid--major-left' %}
+{% endif %}
+{% embed 'molecules-slab' with { slab_variant: slab_variant } %}
+    {% block slab_outer %}
+        {% if headline|children|length %}
+        <div class="slab__wrapper">
+            {{ headline }}
+        </div>
+        {% endif %}
+        <div class="grid {{ gridlayout }}">
+            <div class="grid__column grid__column--major">
+                {% block main %}
+                  {{ main }}
+                {% endblock %}
+            </div>                        
+            <div class="grid__column grid__column--minor">
+                {% block aside %}
+                  {{ aside }}
+                {% endblock %}
+            </div>
+        </div>
+    {% endblock %}
+{% endembed %}

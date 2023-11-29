@@ -1,0 +1,13 @@
+<div class="teaser {{ teaser_variant }}">
+	<div class="teaser__media">
+    {% block teaser_media %}
+    {% endblock %}
+	</div>
+	<div class="teaser__content">
+		{% block teaser_content %}
+			{% include 'molecules-teaser-headline-group' with { level: 3, linked: true, headline: plain_title, url: url } %}
+			{% include 'molecules-content-meta' %}
+			{% include 'atoms-formatted-text' %} 
+		{% endblock %}
+	</div>
+</div>

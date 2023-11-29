@@ -1,0 +1,47 @@
+name: UK D8 Base Theme
+type: theme
+description: Base Theme using Limestone
+package: University of Kentucky
+core_version_requirement: ^9.5 || ^10
+libraries:
+  - ukd8/global
+
+base theme: false
+
+regions:
+  alert: 'Site emergency alerts'
+  #universal_nav: 'Universal utility nav'
+  utility_nav: 'Utility nav'
+  top_nav: 'Top nav'
+  mobile_tab_mainmenu: 'Mobile main nav tab'
+  mobile_tab_section: 'Mobile section nav tab'
+  mobile_tab_utility_nav: 'Mobile utility nav'
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'
+  content_prefix: 'Content prefix'
+  breadcrumb: Breadcrumb
+  content: Content
+  sidebar: Sidebar
+  content_suffix: 'Content suffix'
+  footer_left: 'Footer left'
+  footer_middle: 'Footer middle'
+  footer_right: 'Footer right'
+
+features:
+  - favicon
+  - logo
+
+components:
+  namespaces:
+    atoms:
+      - elements/atoms
+    molecules:
+      - elements/molecules
+    components:
+      - elements/components
+    macros:
+      - macros
+
+ckeditor_stylesheets:
+  - css/wysiwyg.css
+

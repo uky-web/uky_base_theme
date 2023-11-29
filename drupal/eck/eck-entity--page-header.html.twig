@@ -1,0 +1,7 @@
+{% set schema = eck.field_theme_color_scheme|length? eck.field_theme_color_scheme.value : theme_settings.scheme_settings.page_header__text_only.value %}
+{% include 'components-text-page-header' with {
+  headline: content.field_headline_group,
+  cta_primary: content.field_cta_link,
+  cta_secondary: content.field_secondary_link,
+  slab_skin: {'white': 'slab--wildcat-white', 'gray': 'slab--blue-gray', 'dark': 'slab--dark-blue', 'wildcat': 'slab--wildcat-blue'}[schema]
+} %}

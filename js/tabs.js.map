@@ -1,0 +1,1 @@
+{"version":3,"sources":["tabs.js"],"names":["tabs"],"mappings":";;AAAA,IAAMA,OAAO,SAAPA,IAAO,GAAM,CAElB,CAFD","file":"tabs.js","sourcesContent":["const tabs = () => {\n    \n};"]}

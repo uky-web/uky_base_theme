@@ -1,0 +1,17 @@
+{% set schema = eck.field_theme_color_scheme|length? eck.field_theme_color_scheme.value : theme_settings.scheme_settings.collection_item__pullquote.value %}
+{% set brief = eck.field_brief.value %}
+{% if (content.paragraph.field_attribution_1|children|length and content.paragraph.field_attribution_1|children|length) or content.field_media|children|length %}
+{% include 'components-pullquote' with {
+  quote: content.field_description|children,
+  first_line: content.field_attribution_1,
+  second_line: content.field_attribution_2,
+  image: content.field_media|children,
+  pullquote_variant: {'white': '', 'light': 'pullquote--light', 'dark': 'pullquote--dark', 'wildcat': 'pullquote--wildcat'}[schema] ~ (brief? ' pullquote--brief')
+} %}
+{% else %}
+{# if no attribution or image, assume just a pulltext #}
+{% include 'components-pulltext' with {
+  content: content.field_description|children,
+  pulltext_variant: {'white': '', 'light': 'pulltext--light', 'dark': 'pulltext--dark', 'wildcat': 'pulltext--wildcat'}[schema],
+} %}
+{% endif %}

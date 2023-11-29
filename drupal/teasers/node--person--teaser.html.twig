@@ -1,0 +1,16 @@
+{% set name = (node.field_preferred_name|length)? content.field_preferred_name : content.field_name %}
+{# Link image to profile page #}
+<a href="{{ url }}">{{ content.field_media|children[0] }}</a>
+
+<span class="people-list--name"><a class="underline-link" href="{{ url }}">{{ name|children[0] }}</a></span><br />
+<span class="people-list--title">{{ content.field_job_title|children[0] }}</span>
+{% include 'components-contact-info' with { 
+  hide_image: true, 
+  contact_info_variant: 'contact-info--sheet',
+  info: [
+      content.field_categories,
+      content.field_location_text,
+      content.field_phone,
+      content.field_email,
+  ]
+} %}
