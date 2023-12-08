@@ -10,11 +10,11 @@
     }
   ],
   "support": {
-    "source": "https://github.com/uky-web/test_uky_base_theme"
+    "source": "https://github.com/uky-web/uky_base_theme"
   },
   "require": {
     "drupal/components": "^3.0@beta",
-    "uky-web/ukd8_customizations": "^3.99.3"
+    "uky-web/ukd8_customizations": "^3.0.5"
   },
   "repositories": [
     {
