@@ -1,22 +1,21 @@
 {
-    "name": "uky-web/ukd8",
-    "description": "Base theme.",
-    "license": "MIT",
-    "type": "drupal-custom-theme",
-    "authors": [
-      {
-          "name": "University of Kentucky Webcom",
-          "email": "universitywebservices@l.uky.edu"
-      }
-    ],
-    "support": {
-      "source": "https://github.com/uky-web/test_uky_base_theme"
-    },
-    "require": {
-        "drupal/components": "^3.0@beta",
-        "uky-web/ukd8_customizations": "^3.0.0"
-    },
-
+  "name": "uky-web/ukd8",
+  "description": "Base theme.",
+  "license": "MIT",
+  "type": "drupal-custom-theme",
+  "authors": [
+    {
+      "name": "University of Kentucky Webcom",
+      "email": "universitywebservices@l.uky.edu"
+    }
+  ],
+  "support": {
+    "source": "https://github.com/uky-web/test_uky_base_theme"
+  },
+  "require": {
+    "drupal/components": "^3.0@beta",
+    "uky-web/ukd8_customizations": "^3.99.0"
+  },
   "repositories": [
     {
       "type": "composer",
@@ -31,14 +30,13 @@
       "url": "https://asset-packagist.org"
     }
   ],
-
   "scripts": {
-      "post-update-cmd": [
-        "npm install"
-      ],
-      "post-install-cmd": [
-        "rm -R node_modules/patternlab",
-        "npm install"
-      ]
-    }
+    "post-update-cmd": [
+      "npm install"
+    ],
+    "post-install-cmd": [
+      "rm -R node_modules/patternlab",
+      "npm install"
+    ]
+  }
 }
