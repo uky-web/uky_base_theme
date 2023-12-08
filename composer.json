@@ -14,7 +14,7 @@
   },
   "require": {
     "drupal/components": "^3.0@beta",
-    "uky-web/ukd8_customizations": "^3.99.2"
+    "uky-web/ukd8_customizations": "^3.99.3"
   },
   "repositories": [
     {
