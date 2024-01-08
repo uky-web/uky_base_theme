@@ -1,0 +1,8 @@
+{{ attach_library('ukd8/50-50-slab') }}
+{% include '@components/50-50-slab/50-50-slab.twig' with {
+  headline: content.field_headline_group,
+  main: content.field_main|children,
+  aside: content.field_aside|children,
+  reverse_order: paragraph.field_flip.value,
+  background: content.field_background[0]|first,
+} %}

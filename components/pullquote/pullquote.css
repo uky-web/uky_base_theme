@@ -1,0 +1,37 @@
+.pullquote--wildcat {
+    color: white;
+}
+
+.pullquote--wildcat .pullquote__quote p::before, 
+.pullquote--wildcat .pullquote__quote p::after {
+    color: white;
+}
+
+.pullquote--wildcat .pullquote__attribution::before {
+    background-color: white;
+}
+
+.pullquote--wildcat .pullquote__attribution .pullquote__first-line {
+    color: white;
+}
+
+/** Pullquote and pulltext missing some color schemes */
+.pulltext--light,
+.pullquote--light {
+  background-color: #1897d4;
+  border: none;
+}
+
+.pulltext--wildcat,
+.pullquote--wildcat {
+  background-color: #0033a0;
+  border: none;
+  color: white;
+}
+
+.pulltext--dark,
+.pullquote--dark {
+  background-color: #1f2c5e;
+  border: none;
+  color: white;
+}

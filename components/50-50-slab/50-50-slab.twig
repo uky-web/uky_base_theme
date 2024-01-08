@@ -1,0 +1,21 @@
+{% embed 'molecules-slab' with { slab_variant: 'slab__50-50 slab__' ~ background } %}
+    {% block slab_outer %}
+        {% if headline|children|length %}
+        <div class="slab__wrapper">
+            {{ headline }}
+        </div>
+        {% endif %}
+        <div class="grid grid--50-50">
+            <div class="grid__column">
+                {% block main %}
+                  {{ main }}
+                {% endblock %}
+            </div>                        
+            <div class="grid__column">
+                {% block aside %}
+                  {{ aside }}
+                {% endblock %}
+            </div>
+        </div>
+    {% endblock %}
+{% endembed %}

@@ -46,11 +46,16 @@
   {% embed 'molecules-slab-2x1' %}
       {% block slab_content %}
         {{ content.body }}
-        {{ content.field_paragraphs }}
       {% endblock %}
       {% block slab_sidebar %}
         {{ region.sidebar }}
       {% endblock %}
+  {% endembed %}
+
+  {% embed 'molecules-slab' %}
+    {% block slab_content %}
+      {{ content.field_paragraphs }}
+    {% endblock %}
   {% endembed %}
 {% endblock %}
 

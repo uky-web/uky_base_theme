@@ -1,0 +1,100 @@
+.slab__50-50 {
+  background-size: cover;
+  background-position: top;
+}
+
+.slab__50-50.slab__radial {
+  background-position: center;
+  background-image: url(../../assets/static/textures/radial.png);
+  color: #fff;
+}
+.slab__50-50.slab__speckled {
+  background-image: url(../../assets/static/textures/speckled.png);
+}
+.slab__50-50.slab__splash {
+  background-image: url(../../assets/static/textures/splash.png);
+  color: #fff;
+}
+.slab__50-50.slab__squares {
+  background-image: url(../../assets/static/textures/squares.png);
+}
+.slab__50-50.slab__stone {
+  background-image: url(../../assets/static/textures/stone.png);
+}
+
+/* links on dark backgrouns */
+.slab__50-50.slab__radial .cta a.button,
+.slab__50-50.slab__splash .cta a.button {
+  border-color: #0033a0;
+  background-color: #fff;
+  color: #0033a0;
+}
+.slab__50-50.slab__radial .cta a.button:hover,
+.slab__50-50.slab__splash .cta a.button:hover {
+  border-color: #fff;
+  background-color: #0033a0;
+  color: #fff;
+}
+.slab__50-50.slab__splash a:link,
+.slab__50-50.slab__radial a:link,
+.slab__50-50.slab__splash a:visited,
+.slab__50-50.slab__radial a:visited {
+  color: #fff;
+}
+.slab__50-50.slab__splash a:hover,
+.slab__50-50.slab__radial a:hover {
+  color: #B1C9E8;
+}
+
+
+.grid--50-50 .grid__column {
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+}
+.grid--50-50 .grid__column .cta {
+  border: none;
+  display: inline-block;
+  padding-top: 0;
+  padding-bottom: 0;
+  height: auto;
+}
+.grid--50-50 .grid__column .cta :last-child {
+  margin-top: unset;
+}
+@media screen and (min-width: 58rem) {
+  .grid--50-50 .grid__column {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  .grid--50-50 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+  .grid--50-50 .grid__column {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    width: calc(50% - 0.5rem);
+  }
+}
+
+@media screen and (min-width: 76rem) {
+  .grid--50-50 .grid__column {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    width: calc(50% - 1rem);
+  }
+}
+

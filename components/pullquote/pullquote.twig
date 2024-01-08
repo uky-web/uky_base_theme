@@ -1,0 +1,14 @@
+{{ attach_library('ukd8/pullquote') }}
+{% embed 'molecules-slab' with { slab_variant: 'slab__pullquote' } %}
+    {% block slab_outer %}
+        <div class="grid">
+            <div class="grid__column">
+                {% block main %}
+
+                  {{ content }}
+
+                {% endblock %}
+            </div>                        
+        </div>
+    {% endblock %}
+{% endembed %}
