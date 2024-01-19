@@ -16,15 +16,15 @@
       }
 }
 
-/** Heading overrides  */
+/** Heading overrides (from wildcatliving subtheme)  */
 
-h1.headline-group .headline-group__head {
+.main h1.headline-group .headline-group__head {
     font-weight: 800;
     font-size: 54px;
     line-height: 62px;
   }
   
-  h2.headline-group .headline-group__head,
+.main h2.headline-group .headline-group__head,
   .h2 {
     font-weight: 800;
     font-size: 34px;
@@ -32,13 +32,13 @@ h1.headline-group .headline-group__head {
     color: #0033a0;
   }
   
-  h3.headline-group .headline-group__head {
+.main h3.headline-group .headline-group__head {
     font-weight: 800;
     font-size: 30px;
     line-height: 38px;
   }
   
-  h4.headline-group .headline-group__head {
+.main h4.headline-group .headline-group__head {
     font-weight: 800;
     font-size: 24px;
     line-height: 32px;
