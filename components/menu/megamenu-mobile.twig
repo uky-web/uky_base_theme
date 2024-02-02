@@ -1,0 +1,94 @@
+<div class="menu-level-0" tabindex="-1">
+  {% for item in items %}
+
+    {% if item.below %}
+      <button aria-expanded="false" aria-controls="mobile_main-nav-dropdown-{{ loop.index }}" class="main-nav-dropdown-button">
+        {{ item.title }} <span class="ic ic--angle-right" aria-hidden="true"></span>
+      </button>
+      <section id="mobile_main-nav-dropdown-{{ loop.index }}" class="main-nav-dropdown">
+        <a class="link--fancy-reverse close-panel" href="#">Back</a>
+        <div>
+          <h2>
+          {% if item.url.toString|length > 0 %}
+            <a href="{{ item.url }}">{{ item.title }}</a>
+          {% else %}
+            {{ item.title }}
+          {% endif %}
+          </h2>
+          {# nav link-lists #}
+          <div class="link-list">
+            {% if item.below %}
+              <ul>
+                {% for link_list in item.below %}
+                  {% if link_list.entity.field_featured.value == 1 %}
+                  <li class="featured">
+                    <a href="{{ link_list.url }}">{{ link_list.title }}</a>
+                    <div class="desc">{{ link_list.original_link.description }}</div>
+                  </li>
+                  {% else %}
+                  <li>
+                    {% if link_list.below %}
+                    <button aria-expanded="false" aria-controls="mobile_sub-nav-panel-{{ loop.index }}" class="sub-nav-panel-button">
+                      {{ link_list.title }} <span class="ic ic--angle-right" aria-hidden="true"></span>
+                    </button>
+                    <section id="mobile_sub-nav-panel-{{ loop.index }}" class="sub-nav-panel">
+                      <a class="link--fancy-reverse close-panel" href="#">Back</a>
+                      <div>
+                        <h2>
+                        {% if item.url.toString|length > 0 %}
+                          <a href="{{ link_list.url }}">{{ link_list.title }}</a>
+                        {% else %}
+                          {{ link_list.title }}
+                        {% endif %}
+                        </h2>
+                        {# nav sub-link-lists #}
+                        <div class="link-list">
+                          {% if link_list.below %}
+                            <ul>
+                              {% for sub_link_list in link_list.below %}
+                                <li>
+                                  <a href="{{ sub_link_list.url }}">{{ sub_link_list.title }}</a>
+                                </li>
+                              {% endfor %}
+                            </ul>
+                          {% endif %}
+                        </div>
+                      </section>
+                    {% else %}
+                    <a class="sub-nav-panel-button" href="{{ link_list.url }}">{{ link_list.title }}</a>
+                    {% endif %}
+                  </li>
+                  {% endif %}
+                {% endfor %}
+              </ul>
+            {% endif %}
+          </div>
+
+          {% if item.entity.field_extra_heading.value %}
+          {# at a glance #}
+          <div class="feature-block {{ item.entity.field_extra_background.value }}">
+            <h3>{{ item.entity.field_extra_heading.value }}</h3>
+              {% if item.entity.field_extra_links.0.title %}
+              <div>
+                <a class="link--fancy" href="{{ item.entity.field_extra_links.0.url }}">{{ item.entity.field_extra_links.0.title }}</a>
+              </div>
+              {% endif %}
+              {% if item.entity.field_extra_links.1.title %}
+              <div>
+                <a class="link--fancy" href="{{ item.entity.field_extra_links.1.url }}">{{ item.entity.field_extra_links.1.title }}</a>
+              </div>
+              {% endif %}
+              {% if item.entity.field_extra_links.2.title %}
+              <div>
+                <a class="link--fancy" href="{{ item.entity.field_extra_links.2.url }}">{{ item.entity.field_extra_links.2.title }}</a>
+              </div>
+              {% endif %}
+          </div>
+          {% endif %}
+        </div>
+      </section>
+    {% else %}
+      <a class="main-nav-dropdown-button" href="{{ item.url }}">{{ item.title }}</a>
+    {% endif %}
+  {% endfor %}
+</div>

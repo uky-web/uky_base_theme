@@ -1,0 +1,73 @@
+<ul role="list" {# for VoiceOver on Safari #} class="menu-level-0" tabindex="-1">
+  {% for item in items %}
+    {% if not item.hide_from_megamenu %}
+    <li class="main-nav-dropdown-container">
+
+    {% if item.below %}
+      <button aria-expanded="false" aria-controls="main-nav-dropdown-{{ loop.index }}" class="main-nav-dropdown-button">
+        {{ item.title }} <span class="ic ic--angle-right" aria-hidden="true"></span>
+      </button>
+
+      <section id="main-nav-dropdown-{{ loop.index }}" class="main-nav-dropdown">
+        <h2>
+        {% if item.url.toString|length > 0 %}
+          <a class="link--fancy" href="{{ item.url }}">{{ item.title }}</a>
+        {% else %}
+          {{ item.title }}
+        {% endif %}
+        </h2>
+
+        {# nav link-lists #}
+        <div class="link-list">
+          {% if item.below %}
+            <ul>
+              {% for link_list in item.below %}
+                {% if link_list.entity.field_featured.value == 1 %}
+                <li class="featured">
+                  <div>
+                    <a href="{{ link_list.url }}">{{ link_list.title }}</a>
+                    <div class="desc">{{ link_list.original_link.description }}</div>
+                  </div>
+                </li>
+                {% else %}
+                <li>
+                  <a href="{{ link_list.url }}">{{ link_list.title }}</a>
+                </li>
+                {% endif %}
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </div>
+
+        {% if item.entity.field_extra_heading.value %}
+        {# at a glance #}
+        <div class="feature-block {{ item.entity.field_extra_background.value }}">
+          <h3>{{ item.entity.field_extra_heading.value }}</h3>
+            {% if item.entity.field_extra_links.0.title %}
+            <div>
+              <a class="link--fancy" href="{{ item.entity.field_extra_links.0.url }}">{{ item.entity.field_extra_links.0.title }}</a>
+            </div>
+            {% endif %}
+            {% if item.entity.field_extra_links.1.title %}
+            <div>
+              <a class="link--fancy" href="{{ item.entity.field_extra_links.1.url }}">{{ item.entity.field_extra_links.1.title }}</a>
+            </div>
+            {% endif %}
+            {% if item.entity.field_extra_links.2.title %}
+            <div>
+              <a class="link--fancy" href="{{ item.entity.field_extra_links.2.url }}">{{ item.entity.field_extra_links.2.title }}</a>
+            </div>
+            {% endif %}
+        </div>
+        {% endif %}
+
+        <div class="panel-bg"></div>
+      </section>
+    {% else %}
+      <a class="main-nav-dropdown-button" href="{{ item.url }}">{{ item.title }}</a>
+    {% endif %}
+    </li>
+  {% endif %}
+  {% endfor %}
+</ul>
+

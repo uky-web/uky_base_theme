@@ -45,4 +45,12 @@
   }
 
 
-
+/* Menu fix for enabling mega menu without using it */
+#block-uky-main-menu > ul {
+  display: flex;
+  position: relative;
+  list-style: none;
+  margin: 0;
+  padding: 4px 0 0 0;
+  width: inherit;
+}

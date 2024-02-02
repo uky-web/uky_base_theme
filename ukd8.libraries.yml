@@ -12,6 +12,14 @@ global:
     - ukd8/toggle
     - ukd8/tabs
     - ukd8/patternlab
+
+main-nav:
+  css:
+    component:
+      "components/menu/megamenu.css": {}
+  js:
+    "components/menu/megamenu.js": {}
+    
 patternlab:
   css:
     base:
@@ -92,3 +100,4 @@ pullquote:
   css:
     component:
       "components/50-50-slab/50-50-slab.css": {}
+

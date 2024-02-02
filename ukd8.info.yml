@@ -3,8 +3,10 @@ type: theme
 description: Base Theme using Limestone
 package: University of Kentucky
 core_version_requirement: ^9.5 || ^10
+
 libraries:
   - ukd8/global
+  - ukd8/main-nav
 
 base theme: false
 
