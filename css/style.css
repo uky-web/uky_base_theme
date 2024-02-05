@@ -46,7 +46,7 @@
 
 
 /* Menu fix for enabling mega menu without using it */
-#block-uky-main-menu > ul {
+.menu--main > ul {
   display: flex;
   position: relative;
   list-style: none;
