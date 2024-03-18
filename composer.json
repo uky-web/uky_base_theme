@@ -3,7 +3,7 @@
   "description": "Base theme.",
   "license": "MIT",
   "type": "drupal-custom-theme",
-  "version": "3.1.6",
+  "version": "3.2.0",
   "authors": [
     {
       "name": "University of Kentucky Webcom",
@@ -15,7 +15,7 @@
   },
   "require": {
     "drupal/components": "^3.0@beta",
-    "uky-web/ukd8_customizations": "^3.1.6"
+    "uky-web/ukd8_customizations": "^3.2.0"
   },
   "repositories": [
     {
@@ -30,14 +30,5 @@
       "type": "composer",
       "url": "https://asset-packagist.org"
     }
-  ],
-  "scripts": {
-    "post-update-cmd": [
-      "npm install"
-    ],
-    "post-install-cmd": [
-      "rm -R node_modules/patternlab",
-      "npm install"
-    ]
-  }
+  ]
 }

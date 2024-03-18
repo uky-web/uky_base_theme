@@ -13,6 +13,12 @@ global:
     - ukd8/tabs
     - ukd8/patternlab
 
+limestone/limestone:
+  version: 1.x
+  css:
+    theme:
+      css/style.css: {}
+
 main-nav:
   css:
     component:
@@ -20,10 +26,7 @@ main-nav:
   js:
     "components/menu/megamenu.js": {}
     
-patternlab:
-  css:
-    base:
-      node_modules/patternlab/css/style.css: {}
+
 imagesloaded:
   js:
     js/lib/imagesloaded.pkgd.min.js: {}
