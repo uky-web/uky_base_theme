@@ -10,7 +10,7 @@ core_version_requirement: ^9.5 || ^10
 libraries:
   - ukd8/global
   - ukd8/main-nav
-  - 'limestone/limestone'
+  - limestone/limestone
 
 
 base theme: false

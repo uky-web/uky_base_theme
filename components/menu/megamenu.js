@@ -32,7 +32,9 @@ const setUpHeader = () => {
       button.addEventListener("keydown", this.handleButtonKeyDown.bind(this));
     }
 
-    const panelButtons = this.rootNode.querySelectorAll(".sub-nav-panel-button");
+    const panelButtons = this.rootNode.querySelectorAll(
+      ".sub-nav-panel-button",
+    );
     for (let i = 0; i < panelButtons.length; i += 1) {
       const button = panelButtons[i];
       // set selector to the element that contains the content panel
@@ -81,7 +83,11 @@ const setUpHeader = () => {
     }
   };
 
-  DisclosureNav.prototype.controlFocusByKey = function (keyboardEvent, nodeList, currentIndex) {
+  DisclosureNav.prototype.controlFocusByKey = function (
+    keyboardEvent,
+    nodeList,
+    currentIndex,
+  ) {
     switch (keyboardEvent.key) {
       case "ArrowUp":
       case "ArrowLeft":
@@ -130,7 +136,11 @@ const setUpHeader = () => {
     }
 
     // move focus into the open menu if the current menu is open
-    else if (this.useArrowKeys && this.openIndex === targetButtonIndex && event.key === "ArrowDown") {
+    else if (
+      this.useArrowKeys &&
+      this.openIndex === targetButtonIndex &&
+      event.key === "ArrowDown"
+    ) {
       event.preventDefault();
       this.controlledNodes[this.openIndex].querySelector("a").focus();
     }
@@ -158,7 +168,9 @@ const setUpHeader = () => {
       return;
     }
 
-    const menuLinks = Array.prototype.slice.call(this.controlledNodes[this.openIndex].querySelectorAll("a"));
+    const menuLinks = Array.prototype.slice.call(
+      this.controlledNodes[this.openIndex].querySelectorAll("a"),
+    );
     const currentIndex = menuLinks.indexOf(document.activeElement);
 
     // close on escape
@@ -192,7 +204,7 @@ const setUpHeader = () => {
 
       return event;
     },
-    false
+    false,
   );
   // Set a negative left margin on the content panel background
   // Match the size to the left margin of the slab__wrapper element
@@ -216,3 +228,32 @@ if (!window.STORYBOOK_ENV) setUpHeader();
 
 /* Export the script for use in Storybook */
 // export default setUpHeader;
+
+/* Javascript to put items into 2 columns by splitting the total number of items in half */
+document.addEventListener("DOMContentLoaded", function () {
+  var listContainers = document.querySelectorAll(".link-list ul");
+
+  listContainers.forEach(function (listContainer) {
+    var listItems = Array.from(listContainer.children);
+    var halfLength = Math.ceil(listItems.length / 2);
+
+    var column1 = document.createElement("ul");
+    column1.id = "uky-mega-menu-column1";
+    listContainer.parentNode.insertBefore(column1, listContainer);
+
+    var column2 = document.createElement("ul");
+    column2.id = "uky-mega-menu-column2";
+    listContainer.parentNode.insertBefore(column2, listContainer.nextSibling);
+
+    listItems.forEach(function (item, index) {
+      if (index < halfLength) {
+        column1.appendChild(item);
+      } else {
+        column2.appendChild(item);
+      }
+    });
+
+    // Remove the original list container
+    listContainer.parentNode.removeChild(listContainer);
+  });
+});
