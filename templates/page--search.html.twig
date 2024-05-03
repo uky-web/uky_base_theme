@@ -1,0 +1,129 @@
+{{ page.alert }}
+{% include 'components-universal-header' %}
+{% include 'components-global-header' %}
+<main class="main" id="main-content">
+	{% block main %}
+		{% block content_prefix %}
+			{{ page.content_prefix }}
+		{% endblock %}
+
+		{% block breadcrumb %}
+			{# {{ page.breadcrumb }} #}
+            <div class="slab slab--thin slab--wildcat-white">
+                <div class="slab__wrapper">
+                    <nav class="breadcrumb breadcrumbs" role="navigation" aria-labelledby="system-breadcrumb">
+                        <h2 id="system-breadcrumb" class="visually-hidden">Breadcrumb</h2>
+                        <ul>
+                            <li>
+                                <a href="/">Home</a>
+                            </li>
+                            <li>
+                                Search
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+		{% endblock %}
+
+		{% block main_content %}
+				<div class="slab slab--wildcat-white">
+            		<div class="slab__wrapper">
+                  		<div class="editorial">
+							{{ page.content }}
+							<div class="all-of-uk-results">
+								<br>
+								<hr>
+								<br>
+								<h2>Results from all of uky.edu</h2>
+								<div class="uk-searchresults__google-branding">powered by Google Custom Search Engine</div>
+								<div id="GCSEresults"></div>
+								<a id="moreResultsLink" class="link--fancy" style="float:right;" href="https://search.uky.edu/#gsc.tab=0&gsc.q=">More results from all of uky.edu</a>
+							</div>
+						</div>
+					</div>
+				</div>
+		{% endblock %}
+
+		{% block content_suffix %}
+			{{ page.content_suffix }}
+		{% endblock %}
+	{% endblock %}
+</main>
+{% include 'components-global-footer' %}
+{% include 'components-universal-footer' %}
+
+
+<script>
+window.onload = function() {
+    function gcseCallback() {
+        google.search.cse.element.render({
+            gname: 'gsearch',
+            div: 'GCSEresults',
+            tag: 'searchresults-only',
+            attributes: { linkTarget: '', enableImageSearch: false }
+        });
+
+        // Define a function to update the "More results" link
+        function updateMoreResultsLink(query) {
+            var moreResultsLink = document.getElementById('moreResultsLink');
+            if (moreResultsLink) {
+                moreResultsLink.href = 'https://search.uky.edu/#gsc.tab=0&gsc.q=' + encodeURIComponent(query);
+            }
+        }
+
+        var element = google.search.cse.element.getElement('gsearch');
+        var searchInput = document.getElementById('edit-keys');
+
+        // Get the initial value of the search input field
+        var initialSearchQuery = searchInput.value.trim();
+        // Use the extracted search query
+        element.execute(initialSearchQuery);
+
+        // Update the "More results" link with the initial search query
+        updateMoreResultsLink(initialSearchQuery);
+
+        // Delay the execution of the modification script by 500 milliseconds
+        setTimeout(function() {
+            // Find all div tags with gs-title class within the GCSEresults div
+            var resultDivs = document.querySelectorAll('#GCSEresults div.gs-title');
+            resultDivs.forEach(function (element) {
+                // Remove the gs-title class
+                element.classList.remove('gs-title');
+            });
+
+            // Find all a tags with gs-title class within the GCSEresults div
+            var resultLinks = document.querySelectorAll('#GCSEresults a.gs-title');
+            resultLinks.forEach(function (element) {
+                // Remove the gs-title class and add the link--fancy class
+                element.classList.remove('gs-title');
+                element.classList.add('link--fancy');
+            });
+        }, 500);
+
+        // Update the "More results" link when the search query changes
+        if (searchInput) {
+            searchInput.addEventListener('input', function () {
+                var searchQuery = searchInput.value.trim();
+                updateMoreResultsLink(searchQuery);
+            });
+        }
+    }
+
+    window.__gcse = {
+        parsetags: 'explicit',
+        callback: gcseCallback
+    };
+
+    var cx = '006049166686491933951:ssb7y1fquzc';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+};
+</script>
+
+

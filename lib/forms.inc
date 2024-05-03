@@ -6,7 +6,7 @@
 function ukd8_form_alter(&$form, &$form_state, $form_id) {
   if ($form['#id'] == 'search-form') {
     $form['basic']['submit']['#attributes']['class'][] = 'show-for-sr';
-    $form['basic']['keys']['#title'] = t('Search our Site');
+    $form['basic']['keys']['#title'] = t('What can we help you find?');
   }
 }
 

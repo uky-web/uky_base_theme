@@ -1,7 +1,5 @@
 {% set searchid = "search-keywords"|uniqid %}
-<form class="search" method="get" action="https://search.uky.edu/">
- <input type="hidden" value="013669986465570760159:g1z1pzr-kjq" name="cx">
- <input type="hidden" value="UTF-8" name="ie">
+<form class="search" id="search-form" method="get" action="/search/node">
   <label for="{{ searchid }}">Search our Site</label>
   <div class="control-group">
     <input type="text" name="q" id="{{ searchid }}" />
@@ -10,3 +8,17 @@
     </button>
   </div>
 </form>
+
+<script>
+document.getElementById("search-form").addEventListener("submit", function (event) {
+    // Prevent the form from being submitted
+    event.preventDefault();
+    
+    var searchId = "{{ searchid }}";
+    var searchTerm = document.getElementById(searchId).value.trim();
+    
+    if (searchTerm !== "") {
+        window.location.href = this.action + "?keys=" + encodeURIComponent(searchTerm);
+    }
+});
+</script>

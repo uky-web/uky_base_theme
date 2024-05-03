@@ -517,17 +517,18 @@
   }
 
   /* mobile utiltiy nav */
-  #block-utilitynav-2 ul.menu li {
+  #block-utilitynav-mobile ul.menu li {
     display: block;
     font-size: 16px;
     line-height: 50px;
     font-weight: 500;
     text-transform: uppercase;
+    flex-grow: 1;
   }
-  #block-utilitynav-2 ul.menu li a {
+  #block-utilitynav-mobile ul.menu li a {
     text-decoration: none;
   }
-  #block-utilitynav-2 ul.menu li a:hover {
+  #block-utilitynav-mobile ul.menu li a:hover {
     text-decoration: underline;
     color: #fff;
   }

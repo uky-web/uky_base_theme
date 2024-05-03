@@ -54,3 +54,71 @@
   padding: 4px 0 0 0;
   width: inherit;
 }
+
+
+/* Fix for search modal form margin-bottom */
+.modal-display form {
+  margin-bottom: .75rem;
+}
+/* Fix for search page label placement */
+.js-form-type-search .control-group {
+  display: flex;
+}
+/* Styling for the container of the individual search results */
+.local_site_search {
+  padding-left: 1em;
+}
+/* Styling for url of site search result */
+.local_search_url {
+  color: #9d9d9d;
+  text-decoration: none;
+  padding-bottom: 2px;
+  word-break: break-all;
+  font-size: 13px;
+}
+/* Powered by Google text on search page */
+.uk-searchresults__google-branding {
+  font-size: 12px;
+  color: #737373;
+  font-family: Arial, sans-serif;
+}
+
+/* Google search results styling */
+.gsc-control-cse {
+  background-color: #ffffff !important;
+}
+
+.gsc-webResult.gsc-result, .gsc-results .gsc-imageResult {
+  background-color: #ffffff !important;
+}
+
+#GCSEresults .gs-visibleUrl {
+  color: #9d9d9d;
+  text-decoration: none;
+  padding-bottom: 2px;
+  word-break: break-all;
+  font-size: 13px;
+}
+.gsc-above-wrapper-area {
+  display: none;
+}
+.gsc-cursor-box {
+  display: none !important;
+}
+.gcsc-find-more-on-google {
+  display: none !important;
+}
+.gcsc-find-more-on-google-branding {
+  display: none !important;
+}
+.gs-snippet{
+  font-size: 1rem !important;
+  line-height: 1.5rem !important;
+  margin-top: 1rem !important;
+  margin-bottom: 1rem !important;
+  font-family: "usual", sans-serif;
+  font-weight: 300 !important;
+}
+.search-form {
+  display: none;
+}
