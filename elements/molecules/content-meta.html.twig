@@ -1,5 +1,5 @@
 {% if content_date or content_location or content_taxonomy or content_byline %}
-<div class="content-meta">
+<div class="content-meta {{ (content_byline[0] is not empty) ? 'has-byline' : '' }}">
     <div class="content-meta__who-when">
         {% if content_byline %}
             <span class="byline">{{ content_byline }}</span>
