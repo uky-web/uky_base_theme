@@ -122,3 +122,9 @@
 .search-form {
   display: none;
 }
+
+/* Fix for zipper/accordion editorials to add margin to media */
+.accordion__panel .embedded-entity[data-entity-type="media"] {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
