@@ -577,7 +577,7 @@
 }
 
 #uky-mega-menu-column1 {
-  width: 50%;
+  width: auto;
   float: left;
   list-style-type: disc;
   padding-left: 1rem;
@@ -585,7 +585,7 @@
 }
 
 #uky-mega-menu-column2 {
-  width: 50%;
+  width: auto;
   float: left;
   list-style-type: disc;
   padding-left: 3rem;
