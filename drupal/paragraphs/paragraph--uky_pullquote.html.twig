@@ -1,0 +1,11 @@
+
+{% embed 'limestone:uky_pullquote' with {
+    field_description: content.field_description.0,
+    field_media: content.field_media.0,
+    field_attribution_1: content.field_attribution_1.0,
+    field_attribution_2: content.field_attribution_2.0,
+    field_theme_color_scheme: paragraph.field_theme_color_scheme.value,
+    field_brief: paragraph.field_brief.value
+} only %}
+
+{% endembed %}
