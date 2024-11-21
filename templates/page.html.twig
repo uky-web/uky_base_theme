@@ -18,8 +18,8 @@
 			{% set sidebar %}
 				{{ page.sidebar|children }}
 			{% endset %}
-			{% if main_content|trim %}
-				{% if sidebar|trim %}
+			{% if main_content|striptags|trim is not empty %}
+				{% if sidebar|striptags|trim is not empty %}
 					{% include 'molecules-slab-1x2' with {
 						main: main_content,
 						aside: sidebar
