@@ -1,7 +1,8 @@
 {% extends 'node--full.html.twig' %}
 
 {% block prefix %}
-  {% set name = content.field_preferred_name|children|length? content.field_preferred_name : content.field_name %}
+  {% set name_raw = content.field_preferred_name|render|striptags|trim ? content.field_preferred_name|render|striptags|trim : content.field_name|render|striptags|trim %}
+  {% set name = name_raw|replace({'_none': ''})|trim %}
   {% set headline %}
     {% include 'atoms-headline-group' with {
       head: name,
