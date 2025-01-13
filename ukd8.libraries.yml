@@ -27,17 +27,17 @@ main-nav:
     "components/menu/megamenu.js": {}
     
 
-imagesloaded:
-  js:
-    js/lib/imagesloaded.pkgd.min.js: {}
-masonry:
-  js:
-    js/lib/masonry.pkgd.min.js: {}
-magnific:
-  js:
-    js/lib/jquery.magnific-popup.min.js: {}
-  dependencies:
-    - core/jquery
+# imagesloaded:
+#   js:
+#     js/lib/imagesloaded.pkgd.min.js: {}
+# masonry:
+#   js:
+#     js/lib/masonry.pkgd.min.js: {}
+# magnific:
+#   js:
+#     js/lib/jquery.magnific-popup.min.js: {}
+#   dependencies:
+#     - core/jquery
 accessible-accordion:
   js:
     js/lib/jquery-accessible-accordion.js: {}
@@ -59,9 +59,9 @@ image-gallery:
     helpers/image-gallery.js: {}
   dependencies:
     - core/jquery
-    - ukd8/imagesloaded
-    - ukd8/magnific
-    - ukd8/masonry
+    - limestone/imagesloaded
+    - limestone/magnific
+    - limestone/masonry
 zipper:
   js:
     js/accordion.js: {}
@@ -81,7 +81,7 @@ modals:
     js/modals.js: {}
     helpers/modals.js: {}
   dependencies:
-    - ukd8/magnific
+    - limestone/magnific
     - core/jquery
 toggle:
   js:

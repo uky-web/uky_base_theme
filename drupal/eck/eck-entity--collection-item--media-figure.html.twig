@@ -1,7 +1,22 @@
-{% include 'components-media-with-caption' with {
+{# WIP: needs to pass the correct fields #}
+{# {% embed 'limestone:uky_media' with {
+    field_body: content.field_uky_body,
+} only %}
+
+{% endembed %} #}
+
+{# {% include 'components-media-with-caption' with {
   media: content.field_media,
   heading: eck.field_hide_heading.value? false : plain_title,
   caption: content.field_description,
   icon: 'camera',
   citation: eck.field_media.entity.field_attribution.value
-} %}
+} %} #}
+
+{% embed 'limestone:uky_media' with {
+  figure_caption: content.field_description,
+  figure_media: content.field_media,
+  hide_heading: content.field_hide_heading.value,
+} only %}
+
+{% endembed %}
