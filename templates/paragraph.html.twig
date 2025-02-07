@@ -1,6 +1,6 @@
 {# default implementation is a grid #}
 {% if paragraph.field_collection_items|length %}
-  {% set ncol = max(2, min(editorial_column? 2 : 3, paragraph.field_collection_items|length)) %}
+  {% set ncol = max(1, min(editorial_column? 2 : 3, paragraph.field_collection_items|length)) %}
   {% include 'molecules-grid' with {
     head: content.field_headline_group,
     grid_columns: content.field_collection_items|children,

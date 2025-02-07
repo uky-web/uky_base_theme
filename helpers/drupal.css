@@ -51,11 +51,11 @@ ul.menu {
 }
 
 /* enforce embedded media widths */
-.editorial .editorial__aside.align-right,
+/* .editorial .editorial__aside.align-right,
 .editorial .editorial__aside.align-left
 {
   width: 50%;
-}
+} */
 
 .editorial .embedded-entity.align-left {
   margin-right: 2rem;
@@ -136,10 +136,10 @@ th a:link, th a:visited {
 }
 
 /* Simple override for the button a:visited being black issue */
-.editorial a.button,
+/* .editorial a.button,
 .editorial button {
   background-image: none;
-  color: #FFF; }
+  color: #FFF; } */
 
 /* Adding styling for people content reference in a grid */
 .field--name-field-media-image {

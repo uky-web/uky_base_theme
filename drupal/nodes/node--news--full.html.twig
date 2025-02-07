@@ -2,15 +2,34 @@
 
 {% block prefix %}
   {% set header_style = node.field_header_style.entity.type %}
-  {% if header_style == 'split_header' %}
+  {% if header_style == 'full_width' %}
+    {# Full-width hero #}
+    {% set image_style = 'big_16x9' %}
+  {% elseif header_style == 'full_width_3x1' %}
+    {# Full-width hero (small) #}
+    {% set image_style = 'big_3x1' %}
+  {% elseif header_style == 'split_header' %}
+    {# Split hero #}
+    {% set image_style = 'medium_4x3' %}
+  {% elseif header_style == 'split_header_16x9' %}
+    {# Split hero (small) #}
+    {% set image_style = 'medium_16x9' %}
+  {% endif %}
+  {% set styled_media = {
+    '#theme':      'image_style',
+    '#style_name': image_style,
+    '#uri':        content.field_media[0]['#media'].field_media_image.entity.uri.value,
+    '#alt':        content.field_media[0]['#media'].field_media_image[0].alt,
+  } %}
+  {% if header_style matches '{^split_header(_.+)?$}' %}
     {% include 'components-split-page-header' with {
       headline: content.field_headline_group,
-      media: content.field_media
+      media: styled_media
     } %}
-  {% elseif header_style == 'full_width' %}
+  {% elseif header_style matches '{^full_width(_.+)?$}' %}
     {% include 'components-hero-page-header' with {
       headline: content.field_headline_group,
-      media: content.field_media
+      media: styled_media
     } %}
   {% else %}
     {% include 'components-text-page-header' with {
