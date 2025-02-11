@@ -2,6 +2,13 @@
 
 {% block prefix %}
   {% set header_style = node.field_header_style.entity.type %}
+
+  {# If the header style is not a string (usually if set to "none", it returns a reference), #}
+  {# set it to a string for displaying no header #}
+  {% if header_style is iterable %}
+    {% set header_style = 'none' %}
+  {% endif %}
+
   {% if header_style == 'full_width' %}
     {# Full-width hero #}
     {% set image_style = 'big_16x9' %}
