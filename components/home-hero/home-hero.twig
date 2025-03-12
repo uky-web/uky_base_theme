@@ -1,0 +1,41 @@
+{% set left_overlay %}
+<div class="headline">{{ headline }}</div>
+{% if icon_links|length %}
+<ul>
+{% for link in icon_links %}
+  <li>
+    {{ link }}
+  </li>
+{% endfor %}
+</ul>
+{% endif %}
+{% if button %}
+<a class="button button--ghost" href="{{ button.url }}">{{ button.title }}</a>
+{% endif %}
+{% endset %}
+
+<div class="slab page-header page-header--split page-header--split-hero {{ extra_classes }}">
+  <h1 class="visually-hidden">{{ page_title }}</h1>
+  <div class="slab__wrapper page-header__content__mobile-wrapper">
+    <div class="page-header__content">
+      {{ left_overlay }}
+    </div>
+  </div>
+  <div class="page-header--split__hero">
+      {{ media }}
+  </div>
+  <div class="slab__wrapper">
+    <div class="page-header__content page-header__content__desktop-wrapper">
+      {{ left_overlay }}
+    </div>
+    {% if overlay %}
+    <div class="page-header__overlay">
+      {% if overlay.url %}
+        <a href="{{ overlay.url }}">{{ overlay.title }}</a>
+      {% else %}
+        {{ overlay.title }}
+      {% endif %}
+    </div>
+    {% endif %}
+  </div>
+</div>

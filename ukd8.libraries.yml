@@ -2,6 +2,7 @@ global:
   css:
     base:
       helpers/drupal.css: {}
+      css/tweaks.css: {}
       css/style.css: {}
   js:
     helpers/jquery.js: {}
@@ -103,4 +104,27 @@ pullquote:
   css:
     component:
       "components/50-50-slab/50-50-slab.css": {}
+
+testimonial:
+  css:
+    component:
+      "components/testimonial/testimonial.css": {}
+
+alert:
+  css:
+    component:
+      "components/alert/alert.css": {}
+
+separator:
+  css:
+    component:
+      "components/separator/separator.css": {}
+
+ambient-video:
+  css:
+    component:
+      "components/home-hero/home-hero.css": {}
+  js:
+    "components/home-hero/ambient-video.js": {}
+
 

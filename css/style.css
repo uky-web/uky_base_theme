@@ -128,3 +128,30 @@
   margin-left: 1rem;
   margin-right: 1rem;
 }
+
+
+/* Styling for unpublished pages visual queue */
+  .node--unpublished {
+    background-color: rgba(255, 0, 0, 0.2);
+    padding: 20px 10px;
+  }
+
+  .node--unpublished::after {
+    content: "UNPUBLISHED";
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 5rem;
+    font-weight: bold;
+    color: rgba(255, 0, 0, 0.2);
+    z-index: 1000;
+    pointer-events: none;
+  }
+
+  /* Added flex for testimonial pulled from wildcatliving */
+    @media screen and (min-width: 58rem) {
+      .flex {
+          display:flex;
+      }
+  }

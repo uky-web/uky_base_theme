@@ -1,0 +1,123 @@
+
+.ambient-video .video-button {
+  top: 1rem;
+  right: 1rem;
+  bottom: auto;
+  left: auto;
+  width: auto;
+  margin: 0;
+  cursor: pointer;
+}
+.video-button.button--large {
+  padding: 0.45rem 0.5rem 0.25rem 0.5rem;
+}
+.video-button .icon-label .ic {
+  margin: 0;
+}
+
+/* hero overlay */
+.page-header.slab--wildcat-blue {
+  padding-bottom: 2.5rem;
+}
+.page-header--overlay .overlay__container {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 2.5rem;
+  background: rgba(0, 51, 160, 0.68);
+}
+.page-header.page-header--hero.slab--wildcat-blue
+  .overlay__container
+  .slab__wrapper {
+  margin-top: 0;
+  border: 0;
+  background-color: transparent;
+  text-align: center;
+}
+.page-header--overlay .overlay__container .cta-group {
+  justify-content: center;
+}
+.page-header--overlay .overlay__container .cta-group .button {
+  color: #ffffff;
+  background-color: transparent;
+}
+.page-header--overlay .overlay__container .cta-group .button:hover {
+  color: #0033a0;
+  background-color: #ffffff;
+}
+
+@media screen and (max-width: 58rem) {
+  .page-header--overlay .overlay__container {
+    top: 0;
+  }
+  .page-header--overlay .overlay__container .page-header__content {
+    padding-right: 0;
+    padding-top: 8rem;
+  }
+  .main h1.headline-group .headline-group__head {
+    font-size: 44px;
+    line-height: 52px;
+  }
+  .page-header.page-header--hero .slab__wrapper {
+    padding-top: 2.5rem;
+  }
+}
+@media screen and (max-width: 46rem) {
+  .page-header--overlay .overlay__container .page-header__content {
+    padding-top: 1rem;
+  }
+}
+@media screen and (max-width: 35rem) {
+  .page-header.slab--wildcat-blue {
+    padding-bottom: 0;
+  }
+  .page-header--overlay {
+    height: 400px;
+  }
+  .page-header--overlay .ambient-video {
+    overflow-x: hidden;
+  }
+  .page-header--overlay .ambient-video video {
+    height: 400px;
+    width: auto;
+    transform: translateX(-25%);
+  }
+  .page-header--overlay .overlay__container {
+    margin-bottom: 0;
+  }
+  .cta-group {
+    flex-direction: column;
+  }
+  .cta-group a {
+    margin: 0.5rem 0;
+  }
+}
+
+blockquote {
+  border-left: 5px solid #ccc;
+  font-style: italic;
+  margin-left: 0;
+  margin-right: 0;
+  overflow: hidden;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+}
+
+/* Styling for status messages */
+  .status-message--status {
+    background-color: #DCDDDE;
+    border-left: 1rem solid green;
+    padding: 1.5rem 0;
+  }
+  .status-message--warning {
+    background-color: #DCDDDE;
+    border-left: 1rem solid yellow;
+    padding: 1.5rem 0;
+  }
+  .status-message--error {
+    background-color: #DCDDDE;
+    border-left: 1rem solid red;
+    padding: 1.5rem 0;
+  }

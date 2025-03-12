@@ -3,7 +3,7 @@
   {% set byline = node.field_byline.value %}
 {% endif %}
 {% include 'components-content-teaser' with {
-  content_byline: byline,
-  content_date: node.getCreatedTime(),
-  all_day: true,
+    content_byline: content.field_byline,
+    content_date: node.getCreatedTime(),
+    all_day: true,
 } %}

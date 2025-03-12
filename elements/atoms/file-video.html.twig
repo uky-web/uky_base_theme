@@ -1,0 +1,30 @@
+{#
+/**
+* @file
+* Default theme implementation to display the file entity as a video tag.
+*
+* Available variables:
+* - attributes: An array of HTML attributes, intended to be added to the
+*   video tag.
+* - files: And array of files to be added as sources for the video tag. Each
+*   element is an array with the following elements:
+*   - file: The full file object.
+*   - source_attributes: An array of HTML attributes for to be added to the
+*     source tag.
+*
+* @ingroup themeable
+*/
+#}
+{{ attach_library('ukd8/ambient-video') }}
+
+<div class="ambient-video">
+  <video {{ attributes }}>
+    {% for file in files %}
+      <source {{ file.source_attributes }} />
+    {% endfor %}
+  </video>
+  <button class="video-button button--large" aria-label="Stop Video" data-pressed-label="Start Video" data-unpressed-label="Stop Video" data-pressed-icon="design--play-circle-filled" data-unpressed-icon="design--pause-circle-filled" aria-pressed="false">
+      {% include 'atoms-icon-label' with {icon: 'play-triangle', label: 'play video', icon_label_variant: 'video-button__play', hide_label: true } %}
+      {% include 'atoms-icon-label' with {icon: 'pause', label: 'pause video', icon_label_variant: 'video-button__pause', hide_label: true } %}
+  </button>
+</div>

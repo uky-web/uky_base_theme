@@ -1,0 +1,29 @@
+{% set variant_map = {
+  announcement: 'banner-alert--announcement',
+  warning: 'banner-alert--warning',
+  danger: 'banner-alert--emergency',
+} %}
+{% set icon_map = {
+  announcement: 'info',
+  warning: 'info',
+  danger: 'alert',
+} %}
+{%
+  set classes = [
+    'banner-alert',
+    variant_map[alert_level],
+  ]
+%}
+<div class="{{ classes|join(' ') }}">
+  <div class="slab">
+    <div class="slab__wrapper">
+      <span class="icon-label icon-label--big">
+        <span class="ic ic--{{ icon_map[alert_level] }}" aria-hidden="true"></span>
+        <span class="label ">{{ title }}</span>
+      </span>
+      <div class="message">
+        {{ message }}
+      </div>
+    </div>
+  </div>
+</div>

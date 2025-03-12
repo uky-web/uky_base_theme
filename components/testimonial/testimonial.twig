@@ -1,0 +1,29 @@
+{{ attach_library('ukd8/testimonial') }}
+{% embed 'molecules-slab' with { slab_variant: 'slab__testimonial slab__' ~ theme|lower|replace({' ': '_'}) } %}
+  {% block slab_outer %}
+      <div class="slab__wrapper flex">
+        {% if image %}
+        <div class="testimonial__headshot">
+            {{ image }}
+        </div>
+        {% endif %}
+        <div class="testimonial">
+          <div class="pullquote__quote">
+            {% if italics %}
+              <p><em>{{ quote }}</em></p>
+            {% else %}
+              <p>{{ quote }}</p>
+            {% endif %}
+          </div>
+          {% if name|length > 2 %}
+          <div class="testimonial__meta">
+            <cite class="testimonial__attribution">
+              <span class="testimonial__name">{{ name }}</span>
+              <span class="testimonial__title">{{ title }}</span>
+            </cite>
+          </div>
+          {% endif %}
+        </div>            
+      </div>
+  {% endblock %}
+{% endembed %}

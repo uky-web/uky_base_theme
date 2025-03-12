@@ -1,0 +1,8 @@
+{% include '@components/testimonial/testimonial.twig' with {
+  quote: content.field_body|children,
+  name: content.field_attribution_name,
+  title: content.field_attribution_title,
+  image: content.field_headshot|children,
+  theme: content.field_quote_theme.0|first,
+  italics: content.field_italics['#items'].value,
+} %}

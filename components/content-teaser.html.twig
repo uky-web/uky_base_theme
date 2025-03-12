@@ -85,8 +85,8 @@
       {% include 'atoms-headline-group' with {
         level: 3,
         head: node.field_headline_group.headline,
-        super: node.field_headline_group.super,
-        sub: node.field_headline_group.sub,
+        super: node.field_headline_group.0.superhead,
+        sub: node.field_headline_group.0.subhead,
         linked: true,
         url: url
       } %}
@@ -102,7 +102,7 @@
     {% include 'molecules-content-meta' with {
       content_byline: content_byline|default(false),
       content_date: content_date|default(false),
-      content_taxonomy: content_taxonomy|default(false),
+      content_taxonomy: content.field_categories|children,
       content_date_format: content_date_format|default("M d, Y - g:i a")
     } %}
 

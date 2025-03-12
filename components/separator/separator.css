@@ -1,0 +1,91 @@
+.separator__wrapper {
+  max-width: 72rem;
+  margin: 0 auto;
+}
+
+hr.separator {
+  border: 0;
+  height: 46px;
+  width: 100%;
+  display: block;
+}
+
+/* No Margins (Tight) */
+.separator-top-tight {
+  margin-top: -5px;
+}
+
+.separator-bottom-tight {
+  margin-bottom: -5px;
+}
+
+.slab__wrapper .separator-top-tight {
+  margin-top: -5px;
+}
+
+.slab__wrapper .separator-bottom-tight {
+  margin-bottom: -5px;
+}
+
+/* Negative Margins (Overlap) */
+.separator-top-overlap {
+  margin-top: -23px;
+  z-index: 100;
+  position: relative;
+}
+
+.separator-bottom-overlap {
+  margin-bottom: -23px;
+  z-index: 100;
+  position: relative;
+}
+
+.slab__wrapper .separator-top-overlap {
+  margin-top: -23px;
+  z-index: 100;
+  position: relative;
+}
+
+.slab__wrapper .separator-bottom-overlap {
+  margin-bottom: -23px;
+  z-index: 100;
+  position: relative;
+}
+
+/* Base styles for separators */
+hr.separator-classic_checkerboard,
+hr.separator-linear_checkerboard {
+  mask-repeat: repeat-x;
+  -webkit-mask-repeat: repeat-x;
+  mask-position: center;
+  -webkit-mask-position: center;
+  mask-size: contain;
+  -webkit-mask-size: contain;
+}
+
+/* Classic Checkerboard - Shared */
+hr.separator-classic_checkerboard {
+  mask-image: url(/themes/uky_platform/ukd8/assets/static/brand-checkerboard-classic.svg);
+  -webkit-mask-image: url(/themes/uky_platform/ukd8/assets/static/brand-checkerboard-classic.svg);
+  mask-size: 80px 100%;
+  -webkit-mask-size: 80px 100%;
+}
+
+/* Linear Checkerboard - Shared */
+hr.separator-linear_checkerboard {
+  mask-image: url(/themes/uky_platform/ukd8/assets/static/brand-checkerboard-linear.svg);
+  -webkit-mask-image: url(/themes/uky_platform/ukd8/assets/static/brand-checkerboard-linear.svg);
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-size: contain;
+  -webkit-mask-size: contain;
+}
+
+/* Color Variations */
+hr.separator-blue {
+  background-color: #0033a0;
+}
+
+hr.separator-white {
+  background-color: #ffffff;
+}

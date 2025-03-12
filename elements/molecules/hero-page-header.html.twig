@@ -1,0 +1,15 @@
+{% embed 'molecules-slab' with {slab_variant : slab_variant ~ " page-header page-header--hero " ~ hero_variant} %}
+    {% block slab_outer %}
+        {{ media }}
+        <div class="slab__wrapper">
+            <div class="page-header__content">
+                {% include 'molecules-page-header-text' %}
+            </div>
+            {% if secondary_image_url %}
+                <div class="page-header__secondary-img">
+                    <img src="{{ secondary_image_url }}" alt="{{ secondary_image_alt }}">
+                </div>
+            {% endif %}
+        </div>
+    {% endblock %}
+{% endembed %}

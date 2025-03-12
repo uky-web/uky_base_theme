@@ -1,0 +1,204 @@
+.slab__testimonial {
+  background-size: cover;
+  background-position: top;
+}
+.slab__testimonial .slab__wrapper {
+  align-items: center;
+}
+
+/* Blue Checker */
+.slab__testimonial.slab__blue_checker {
+  background-image: url(../../assets/static/textures/quote_bg_1.png);
+}
+.slab__testimonial.slab__blue_checker .testimonial__name {
+  color: #B2CAE7;
+}
+.slab__testimonial.slab__blue_checker .testimonial__title,
+.slab__testimonial.slab__blue_checker .pullquote__quote p,
+.slab__testimonial.slab__blue_checker .pullquote__quote p::before,
+.slab__testimonial.slab__blue_checker .pullquote__quote p::after {
+  color: #FFFFFF;
+}
+.slab__testimonial.slab__blue_checker .testimonial__attribution::before {
+  background-color: #FFFFFF;
+}
+.slab__testimonial.slab__blue_checker .testimonial__headshot::before {
+  background-image: url(../../assets/static/textures/headshot_bg_yellow.png);
+}
+
+/* Light Blue Speckled */
+.slab__testimonial.slab__light_blue_speckled {
+  background-image: url(../../assets/static/textures/quote_bg_2.png);
+}
+.slab__testimonial.slab__light_blue_speckled .testimonial__name,
+.slab__testimonial.slab__light_blue_speckled .testimonial__title,
+.slab__testimonial.slab__light_blue_speckled .pullquote__quote p
+ {
+  color: #1B365D;
+}
+.slab__testimonial.slab__light_blue_speckled .testimonial__attribution::before {
+  background-color: #FFFFFF;
+}
+.slab__testimonial.slab__light_blue_speckled .pullquote__quote p::before,
+.slab__testimonial.slab__light_blue_speckled .pullquote__quote p::after {
+  display: none;
+}
+.slab__testimonial.slab__light_blue_speckled .testimonial__headshot::before {
+  background-image: url(../../assets/static/textures/headshot_bg_blue.png);
+}
+
+/* Blue Splash */
+.slab__testimonial.slab__blue_splash {
+  background-image: url(../../assets/static/textures/quote_bg_3.png);
+}
+.slab__testimonial.slab__blue_splash .testimonial__name {
+  color: #B2CAE7;
+}
+.slab__testimonial.slab__blue_splash .testimonial__title,
+.slab__testimonial.slab__blue_splash .pullquote__quote p,
+.slab__testimonial.slab__blue_splash .pullquote__quote p::before,
+.slab__testimonial.slab__blue_splash .pullquote__quote p::after {
+  color: #FFFFFF;
+}
+.slab__testimonial.slab__blue_splash .testimonial__attribution::before {
+  background-color: #FFFFFF;
+}
+.slab__testimonial.slab__blue_splash .testimonial__headshot::before {
+  background-image: url(../../assets/static/textures/headshot_bg_yellow.png);
+}
+
+/* White Comb */
+.slab__testimonial.slab__white_comb {
+  background-image: url(../../assets/static/textures/quote_bg_4.png);
+}
+.slab__testimonial.slab__white_comb .testimonial__name,
+.slab__testimonial.slab__white_comb .testimonial__title,
+.slab__testimonial.slab__white_comb .pullquote__quote p {
+  color: #1B365D;
+}
+.slab__testimonial.slab__white_comb .testimonial__attribution::before {
+  background-color: #D5E9F5;
+}
+.slab__testimonial.slab__white_comb .pullquote__quote p::before,
+.slab__testimonial.slab__white_comb .pullquote__quote p::after {
+  display: none;
+}
+.slab__testimonial.slab__white_comb .testimonial__headshot::before {
+  background-image: url(../../assets/static/textures/headshot_bg_ltblue.png);
+}
+
+/* Light Blue Squares */
+.slab__testimonial.slab__light_blue_squares {
+  background-image: url(../../assets/static/textures/quote_bg_5.png);
+}
+.slab__testimonial.slab__light_blue_squares .testimonial__name,
+.slab__testimonial.slab__light_blue_squares .testimonial__title,
+.slab__testimonial.slab__light_blue_squares .pullquote__quote p,
+.slab__testimonial.slab__light_blue_squares .pullquote__quote p::before,
+.slab__testimonial.slab__light_blue_squares .pullquote__quote p::after {
+  color: #1B365D;
+}
+.slab__testimonial.slab__light_blue_squares .testimonial__attribution::before {
+  background-color: #FFFFFF;
+}
+.slab__testimonial.slab__light_blue_squares .testimonial__headshot::before {
+  background-image: url(../../assets/static/textures/headshot_bg_yellow.png);
+}
+
+/* White Squares */
+.slab__testimonial.slab__blue_squares {
+  background-image: url(../../assets/static/textures/quote_bg_6.png);
+}
+.slab__testimonial.slab__blue_squares .testimonial__name,
+.slab__testimonial.slab__blue_squares .testimonial__title,
+.slab__testimonial.slab__blue_squares .pullquote__quote p,
+.slab__testimonial.slab__blue_squares .pullquote__quote p::before,
+.slab__testimonial.slab__blue_squares .pullquote__quote p::after {
+  color: #FFFFFF;
+}
+.slab__testimonial.slab__blue_squares .testimonial__attribution::before {
+  background-color: #FFFFFF;
+}
+.slab__testimonial.slab__blue_squares .testimonial__headshot::before {
+  background-image: url(../../assets/static/textures/headshot_bg_ltblue.png);
+}
+
+/* Yellow Radial */
+.slab__testimonial.slab__yellow_radial {
+  background-image: url(../../assets/static/textures/quote_bg_7.png);
+}
+.slab__testimonial.slab__yellow_radial .testimonial__name,
+.slab__testimonial.slab__yellow_radial .testimonial__title,
+.slab__testimonial.slab__yellow_radial .pullquote__quote p {
+  color: #1B365D;
+}
+.slab__testimonial.slab__yellow_radial .testimonial__attribution::before {
+  background-color: #1B365D;
+}
+.slab__testimonial.slab__yellow_radial .pullquote__quote p::before,
+.slab__testimonial.slab__yellow_radial .pullquote__quote p::after {
+  display: none;
+}
+.slab__testimonial.slab__yellow_radial .testimonial__headshot::before {
+  background-image: url(../../assets/static/textures/headshot_bg_blue.png);
+}
+
+
+
+.testimonial__meta {
+  margin-top: 0;
+}
+.testimonial__name {
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  font-weight: 600;
+  font-style: normal;
+}
+.testimonial__title {
+  font-size: 1.25rem;
+  line-height: 2rem;
+}
+
+.testimonial__attribution {
+  display: block;
+  position: relative;
+  min-height: 6.25rem;
+  padding-top: 1.5rem;
+}
+.testimonial__attribution::before {
+  position: absolute;
+  top: 0;
+  width: 50px;
+  height: 4px;
+  content: '';
+  left: 0;
+  background-color: #0033a0;
+}
+.testimonial__headshot img {
+  border-radius: 50%;
+  width: 180px;
+  position:relative;
+}
+.pullquote__quote p {
+  font-size: 1.625rem;
+  line-height: 32px;
+  font-weight: 400;
+  font-style: normal;
+  font-family: "Surveyor Display A","Surveyor Display B",serif;
+}
+
+.testimonial__headshot {
+  position: relative;
+  padding-right: 3rem;
+  margin-bottom: 1rem;
+}
+.testimonial__headshot::before {
+  content: '';
+  width: 180px;
+  height: 180px;
+  background-size: contain;
+  display: inline-block;
+  position: absolute;
+  border-radius: 50%;
+  left: 14px;
+}
