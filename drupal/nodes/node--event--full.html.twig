@@ -15,6 +15,9 @@
   {% elseif header_style == 'full_width_3x1' %}
     {# Full-width hero (small) #}
     {% set image_style = 'big_3x1' %}
+  {% elseif header_style == 'full_width_hero_overlay' %}
+    {# Full-width hero (overlay) #}
+    {% set image_style = 'big_3x1' %}
   {% elseif header_style == 'split_header' %}
     {# Split hero #}
     {% set image_style = 'medium_4x3' %}
@@ -28,21 +31,29 @@
     '#uri':        content.field_media[0]['#media'].field_media_image.entity.uri.value,
     '#alt':        content.field_media[0]['#media'].field_media_image[0].alt,
   } %}
-  {% if header_style matches '{^split_header(_.+)?$}' %}
-    {% include 'components-split-page-header' with {
-      headline: content.field_headline_group,
-      media: styled_media
-    } %}
-  {% elseif header_style matches '{^full_width(_.+)?$}' %}
-    {% include 'components-hero-page-header' with {
-      headline: content.field_headline_group,
-      media: styled_media
-    } %}
-  {% else %}
-    {% include 'components-text-page-header' with {
-      headline: content.field_headline_group
-    } %}
-  {% endif %}
+  
+{% if header_style == 'full_width_hero_overlay' %}
+  {% include '@ukd8/components/home-hero/hero-page-header-overlay.html.twig' with {
+    headline: content.field_headline_group,
+    media: styled_media,
+    slab_variant: "slab--wildcat-blue",
+    hero_variant: "page-header--overlay"
+  } %}
+{% elseif header_style in ['full_width', 'full_width_3x1'] %}
+  {% include 'components-hero-page-header' with {
+    headline: content.field_headline_group,
+    media: styled_media
+  } %}
+{% elseif header_style in ['split_header', 'split_header_16x9'] %}
+  {% include 'components-split-page-header' with {
+    headline: content.field_headline_group,
+    media: styled_media
+  } %}
+{% else %}
+  {% include 'components-text-page-header' with {
+    headline: content.field_headline_group
+  } %}
+{% endif %}
 
   {{ region.breadcrumb }}
 

@@ -2,7 +2,7 @@
 
 {% block prefix %}
   {% set name_raw = content.field_preferred_name|render|striptags|trim ? content.field_preferred_name|render|striptags|trim : content.field_name|render|striptags|trim %}
-  {% set name = name_raw|replace({' _none': ''})|trim %}
+  {% set name = name_raw|replace({' _none': ''})|trim|replace({'&#039;': "'"}) %}
   {% set headline %}
     {% include 'atoms-headline-group' with {
       head: name,
