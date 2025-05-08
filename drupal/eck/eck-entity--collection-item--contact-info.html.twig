@@ -1,5 +1,6 @@
-{% include 'components-contact-info' with {
+{% include 'components-contact-info-paragraph' with {
   headline: content.title,
+  description: content.field_description,
   name: content.field_name_text|children,
   job_title: content.field_job_title|children,
   photo: content.field_media,

@@ -1,0 +1,27 @@
+<div class="teaser teaser--blue-gray contact-info-paragraph {{ contact_info_variant }}">
+    <div class="contact-info-paragraph__heading">
+        {{ headline }}
+    </div>
+    {{ description }}
+    <div class="contact-info-paragraph__content">
+        {% if photo['#items'] is defined and photo['#items']|length > 0 %}
+            <div class="contact-info-paragraph__left">
+                {{ photo }}
+            </div>
+        {% endif %}
+        <div class="contact-info-paragraph__right">
+            <span class="contact-info-paragraph__name"><b>{{ name }}</b></span>
+            <span class="contact-info-paragraph__title">{{ job_title }}</span>
+            <dl class="invisible-labels">
+                {% for item in info %}
+                    {% if item|children|length %}
+                        <dt>{{ item['#title'] }}</dt>
+                        {% for link in item|children %}
+                            <dd>{{ link|injectclass('link--fancy') }}</dd>
+                        {% endfor %}
+                    {% endif %}
+                {% endfor %}
+            </dl>
+        </div>
+    </div>
+</div>
