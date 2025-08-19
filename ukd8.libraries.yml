@@ -26,7 +26,9 @@ main-nav:
       "components/menu/megamenu.css": {}
   js:
     "components/menu/megamenu.js": {}
-    
+  dependencies:
+    - core/jquery
+
 
 # imagesloaded:
 #   js:
@@ -126,5 +128,3 @@ ambient-video:
       "components/home-hero/home-hero.css": {}
   js:
     "components/home-hero/ambient-video.js": {}
-
-
