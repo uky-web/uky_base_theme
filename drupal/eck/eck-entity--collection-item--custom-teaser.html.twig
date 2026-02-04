@@ -2,14 +2,16 @@
 {% embed 'components-teaser' with {
   teaser_variant: 'teaser--custom'
 } %}
-  
+
   {% block teaser_media %}
-    {% if link %}
-      <a href="{{ link }}">
-    {% endif %}
-    {{ content.field_media }}
-    {% if link %}
-      </a>
+    {% if content.field_media['#items'] %}
+      {% if link %}
+        <a href="{{ link }}">
+      {% endif %}
+      {{ content.field_media }}
+      {% if link %}
+        </a>
+      {% endif %}
     {% endif %}
   {% endblock %}
 

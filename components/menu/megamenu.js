@@ -33,7 +33,7 @@ const setUpHeader = () => {
     }
 
     const panelButtons = this.rootNode.querySelectorAll(
-      ".sub-nav-panel-button",
+      ".sub-nav-panel-button"
     );
     for (let i = 0; i < panelButtons.length; i += 1) {
       const button = panelButtons[i];
@@ -86,7 +86,7 @@ const setUpHeader = () => {
   DisclosureNav.prototype.controlFocusByKey = function (
     keyboardEvent,
     nodeList,
-    currentIndex,
+    currentIndex
   ) {
     switch (keyboardEvent.key) {
       case "ArrowUp":
@@ -169,7 +169,7 @@ const setUpHeader = () => {
     }
 
     const menuLinks = Array.prototype.slice.call(
-      this.controlledNodes[this.openIndex].querySelectorAll("a"),
+      this.controlledNodes[this.openIndex].querySelectorAll("a")
     );
     const currentIndex = menuLinks.indexOf(document.activeElement);
 
@@ -191,21 +191,57 @@ const setUpHeader = () => {
   };
 
   /* Initialize Disclosure Menus */
-  window.addEventListener(
-    "load",
-    function (event) {
-      const menus = document.querySelectorAll(".menu-level-0");
-      const disclosureMenus = [];
+  // window.addEventListener(
+  //   "load",
+  //   function (event) {
+  //     const menus = document.querySelectorAll(".menu-level-0");
+  //     const disclosureMenus = [];
 
-      for (let i = 0; i < menus.length; i += 1) {
-        disclosureMenus[i] = new DisclosureNav(menus[i]);
-        disclosureMenus[i].init();
-      }
+  //     for (let i = 0; i < menus.length; i += 1) {
+  //       disclosureMenus[i] = new DisclosureNav(menus[i]);
+  //       disclosureMenus[i].init();
+  //     }
 
-      return event;
-    },
-    false,
-  );
+  //     return event;
+  //   },
+  //   false
+  // );
+  const initMenus = function () {
+    const menus = document.querySelectorAll(".menu-level-0");
+    const disclosureMenus = [];
+
+    for (let i = 0; i < menus.length; i += 1) {
+      disclosureMenus[i] = new DisclosureNav(menus[i]);
+      disclosureMenus[i].init();
+    }
+  };
+
+  // Prefer Drupal behavior if available to support AJAX reattachments.
+  if (typeof Drupal !== "undefined" && Drupal.behaviors) {
+    Drupal.behaviors.megamenu = Drupal.behaviors.megamenu || {
+      attach: function (context) {
+        const root = context || document;
+        const menus = root.querySelectorAll(".menu-level-0");
+        for (let i = 0; i < menus.length; i += 1) {
+          const menu = menus[i];
+          if (menu.dataset.megamenuBound === "true") continue;
+          const disclosure = new DisclosureNav(menu);
+          disclosure.init();
+          menu.dataset.megamenuBound = "true";
+        }
+      },
+    };
+  } else {
+    // Fallback: run on DOM ready or immediately if already parsed.
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initMenus, { once: true });
+    } else {
+      initMenus();
+    }
+  }
+
+
+
   // Set a negative left margin on the content panel background
   // Match the size to the left margin of the slab__wrapper element
   function setLeftMargin() {
@@ -224,7 +260,8 @@ const setUpHeader = () => {
   window.addEventListener("resize", setLeftMargin);
 };
 
-if (!window.STORYBOOK_ENV) setUpHeader();
+// if (!window.STORYBOOK_ENV) setUpHeader();
+setUpHeader();
 
 /* Export the script for use in Storybook */
 // export default setUpHeader;
