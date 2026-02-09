@@ -11,6 +11,7 @@ global:
   dependencies:
     - core/drupal
     - core/jquery
+    - core/once
     - ukd8/toggle
     - ukd8/tabs
     - ukd8/patternlab
