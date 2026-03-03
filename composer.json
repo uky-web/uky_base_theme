@@ -3,7 +3,7 @@
   "description": "Base theme.",
   "license": "MIT",
   "type": "uky-web-theme",
-  "version": "3.12.2",
+  "version": "3.13.0",
   "authors": [
     {
       "name": "University of Kentucky Webcom",
@@ -16,12 +16,12 @@
   "require": {
     "drupal/components": "^3.0@beta",
     "uky-web/limestone": "^3.2.0",
-    "uky-web/ukd8_customizations": "^3.12.2"
+    "uky-web/ukd8_customizations": "^3.13.0"
   },
   "repositories": [
     {
       "type": "composer",
-      "url": "https://composer.uky.dev/"
+      "url": "https://composer.uky.edu/"
     },
     {
       "type": "composer",

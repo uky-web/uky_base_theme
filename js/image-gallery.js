@@ -51,7 +51,19 @@ var image_gallery = function image_gallery() {
     var $iframe = $this.find("iframe");
 
     var type = $iframe.length ? "iframe" : "image";
-    var src = type === "iframe" ? $iframe.attr("src") : $this.attr("href");
+    var src =
+      type === "iframe"
+        ? $iframe.attr("src")
+        : $this.data("mfp-src") || $this.attr("href");
+
+    if (src) {
+      try {
+        var url = new URL(src, window.location.origin);
+        src = url.pathname + url.search + url.hash;
+      } catch (e) {
+        // If it's already relative, leave it alone
+      }
+    }
 
     var $captionElement = $this.find("figcaption");
 
@@ -82,10 +94,10 @@ var image_gallery = function image_gallery() {
       },
     },
     callbacks: {
-      beforeOpen: function() {
+      beforeOpen: function () {
         // Calculate the index of the clicked element
         var index = $(this.st.el).index('.image-gallery__popup-launcher');
-        
+
         // Dynamically set the items and the starting index for Magnific Popup
         this.items = items; // Set the items array
         this.index = index; // Set the index of the clicked element
@@ -101,6 +113,11 @@ var image_gallery = function image_gallery() {
         },
       },
     },
+  });
+
+  // Allow caption links to be clicked without opening the modal.
+  $gallery.on("click", ".image-gallery__popup-launcher a", function (e) {
+    e.stopPropagation();
   });
 
   // Fit captions on various popup events
