@@ -73,16 +73,19 @@
 {% embed 'components-teaser' with {
   teaser_variant: 'teaser--' ~ node.bundle|clean_class
 } %}
-  
-  {% block teaser_media %}
-    <a href="{{ url }}">
-      {{ content.field_media }}
-    </a>
-  {% endblock %}
 
-  {% block teaser_content %}
-    {% if content.field_headline_group|children|length %}
-      {% include 'atoms-headline-group' with {
+	{% block teaser_media %}
+		{# Check if the field is not empty and has at least one child/item #}
+		{% if content.field_media|render|trim %}
+			<a href="{{ url }}" aria-hidden="true" tabindex="-1">
+				{{ content.field_media }}
+			</a>
+		{% endif %}
+	{% endblock %}
+
+	{% block teaser_content %}
+		{% if content.field_headline_group|children|length %}
+			{% include 'atoms-headline-group' with {
         level: 3,
         head: node.field_headline_group.headline,
         super: node.field_headline_group.0.superhead,
@@ -90,25 +93,25 @@
         linked: true,
         url: url
       } %}
-    {% else %}
-      {% include 'atoms-heading' with {
+		{% else %}
+			{% include 'atoms-heading' with {
         level: 3,
         headline: plain_title,
         linked: true,
         url: url
       } %}
-    {% endif %}
+		{% endif %}
 
-    {% include 'molecules-content-meta' with {
+		{% include 'molecules-content-meta' with {
       content_byline: content_byline|default(false),
       content_date: content_date|default(false),
       content_taxonomy: content.field_categories|children,
       content_date_format: content_date_format|default("M d, Y - g:i a")
     } %}
 
-    <p>
-      {{ content.body|children[0]|render|striptags('<em><strong>')|raw }}
-    </p>
+		<p>
+			{{ content.body|children[0]|render|striptags('<em><strong>')|raw }}
+		</p>
 
-  {% endblock %}
+	{% endblock %}
 {% endembed %}
